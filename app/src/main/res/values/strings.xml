@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">Gruppe-5-Widmark-Formel-App</string>
-    <string name="promille_rechner">Promille - Rechner</string>
+    <string name="app_name">Promille - Rechner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unitWeight">kg</string>
+    <string name="textWeight">Gewicht:</string>
+    <string name="unitHeight">cm</string>
+    <string name="textHeight">Größe:</string>
+    <string name="unitHeight">cm</string>
+    <string name="textGender">Geschlecht:</string>
+    <string name="genderRadioM">männlich</string>
+    <string name="genderRadioW">weiblich</string>
+    <string name="textDuration">Zeitraum des Alkoholkonsums:</string>
+    <string name="textDurationUnit">Std.</string>
+    <string name="textQuantity">Menge des Alkoholkonsums</string>
 </resources>
