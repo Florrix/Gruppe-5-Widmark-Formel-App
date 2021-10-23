@@ -8,10 +8,8 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/dhHostFragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:id="@+id/startFragment"
+        android:name="com.mobileapplications.gruppe_5_widmark_formel_app.StartFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:navGraph="@navigation/navigation"
-        app:defaultNavHost="true" />
+        android:layout_height="match_parent"/>
 </LinearLayout>
