@@ -6,11 +6,13 @@
     <string name="textWeight">Gewicht:</string>
     <string name="unitHeight">cm</string>
     <string name="textHeight">Größe:</string>
-    <string name="unitHeight">cm</string>
     <string name="textGender">Geschlecht:</string>
     <string name="genderRadioM">männlich</string>
     <string name="genderRadioW">weiblich</string>
     <string name="textDuration">Zeitraum des Alkoholkonsums:</string>
     <string name="textDurationUnit">Std.</string>
     <string name="textQuantity">Menge des Alkoholkonsums</string>
+    <string name="buttonCalculate">Berechnen</string>
+    <string name="textResultValue">1,05‰</string>
+    <string name="textPromille">(Promille)</string>
 </resources>

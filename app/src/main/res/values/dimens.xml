@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="widthUnit">50dp</dimen>
-    <dimen name="textSize">16dp</dimen>
+    <dimen name="textSize">16sp</dimen>
     <dimen name="textInputFieldWidth">130dp</dimen>
     <dimen name="marginEnd">25dp</dimen>
     <dimen name="textFieldWidth">200dp</dimen>
