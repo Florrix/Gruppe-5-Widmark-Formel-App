@@ -38,34 +38,28 @@
 
             <TextView
                 android:id="@+id/textResultWeight"
-                style="@style/textStyle1"
+                style="@style/textStyleInput"
                 android:text="@string/textWeight" />
 
             <TextView
                 android:id="@+id/resultWeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Größe" />
+                style="@style/textUnit"
+                android:text="ergebnis" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textResultHeight"
-                style="@style/textStyle1"
-                android:text="@string/textHeight" />
 
             <TextView
                 android:id="@+id/resultHeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                style="@style/textStyleInput"
+                android:text="@string/textHeight" />
+            <TextView
+                android:id="@+id/resultWeight"
+                style="@style/textUnit"
+                android:text="ergebnis" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,18 +67,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textResultGender"
-                style="@style/textStyle1"
-                android:text="@string/textGender" />
 
             <TextView
                 android:id="@+id/resultGender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                style="@style/textStyleInput"
+                android:text="@string/textGender" />
+
+            <TextView
+                android:id="@+id/resultWeight"
+                style="@style/textUnit"
+                android:text="ergebnis" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,16 +86,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textResultDuration"
-                style="@style/textStyle1"
-                android:text="@string/textDuration" />
-
-            <TextView
                 android:id="@+id/resultDuration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                style="@style/textStyleInput"
+                android:text="@string/textDuration"/>
+            <TextView
+                android:id="@+id/resultWeight"
+                style="@style/textUnit"
+                android:text="ergebnis" />
         </LinearLayout>
 
         <LinearLayout
@@ -121,9 +110,7 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            style="@style/buttonGreen"
             android:text="@string/buttonNewCalculation" />
 
     </LinearLayout>

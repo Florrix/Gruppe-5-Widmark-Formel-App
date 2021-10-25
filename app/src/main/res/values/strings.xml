@@ -11,9 +11,36 @@
     <string name="genderRadioW">weiblich</string>
     <string name="textDuration">Zeitraum des Alkoholkonsums:</string>
     <string name="textDurationUnit">Std.</string>
-    <string name="textQuantity">Menge des Alkoholkonsums:</string>
+    <string name="textAlcohol">Menge des Alkoholkonsums:</string>
     <string name="buttonCalculate">Berechnen</string>
     <string name="textResultValue">1,5‰</string>
     <string name="textPromille">(Promille)</string>
     <string name="buttonNewCalculation">Neue Berechnung</string>
+    <string name="textAlcoholtype">Art:</string>
+    <string name="textAlcoholQuantity">Anzahl:</string>
+    <string-array  name="spinnerAlcoholtype">
+        <item>Flasche Bier (0.33 l, 4,8 Vol.-%</item>
+        <item>Flasche Bier (0.5l, 4,8 Vol.-%</item>
+        <item>Glas Bier (0.2 l, 4,8 Vol.-%</item>
+        <item>Glas Bier (0.4l, 4,8 Vol.-%</item>
+        <item>Flasche Rotwein (0.75 l, 12.5 Vol.-%</item>
+        <item>Glas Rotweinein(0.2 l, 12.5 Vol.-%)</item>
+        <item>Flasche Weißwein (0.75l, 11.5 Vol.-% </item>
+        <item>Glas Weißweinein(0.2 l, 11.5 Vol.-%)</item>
+        <item>Flasche Sekt (0.75l, 12.5 Vol.-%</item>
+        <item>Glas Sekt(0.2 l, 12.5 Vol.-%)</item>
+        <item>Longdrink (2 cl, 0.4 l)</item>
+        <item>Longdrink Shot (4 cl, 0.4 l)</item>
+        <item>Longdrink Shot (6 cl, 0.4 l)</item>
+        <item>einfacher Shot (2 cl, 35 Vol.-%)</item>
+        <item>doppleter Shot (4 cl, Vol.-%)</item>
+    </string-array>
+    <string-array  name="spinnerAlcoholQuantity">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
 </resources>

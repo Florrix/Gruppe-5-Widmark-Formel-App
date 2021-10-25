@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="textStyle1">
+    <!--definierter Sytle für die Linearlayouts für die Startseite-->
+    <style name="layoutHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+    <!--definierter Sytle für die Art der Eingabedaten des StartFragments-->
+    <style name="textStyleInput">
         <item name="android:layout_width">@dimen/textFieldWidth</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
@@ -9,5 +16,48 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/textSize</item>
         <item name="android:textStyle">bold</item>
+    </style>
+    <!--definierter Sytle für die Eingabefelder beim StartFragment-->
+    <style name="InputStyleValue">
+        <item name="android:layout_width">@dimen/textInputFieldWidth</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:backgroundTint">@color/primary_color</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+    <!--definierter Sytle für die Anzeige der Einheiten der Einagbewerte auf dem StartFragment-->
+    <style name="textUnit">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/marginEnd</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+    <!--definierter Sytle für die RadioButtons der Geschlechter-->
+    <style name="radioGender">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSize</item>
+    </style>
+    <!--definierter Sytle Ausklappoptionen der Alkoholeinnahmen-->
+    <style name="spinnerAlcohol">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+    <!--definierter Sytle für das aussehn der Buttons-->
+    <style name="buttonGreen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:backgroundTint">@color/primary_color</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingRight">35dp</item>
+        <item name="android:paddingBottom">20dp</item>
     </style>
 </resources>
