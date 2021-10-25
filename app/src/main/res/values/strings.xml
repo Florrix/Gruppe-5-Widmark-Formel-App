@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Promille - Rechner</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <!--Texte für das Startfragment-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="unitWeight">kg</string>
     <string name="textWeight">Gewicht:</string>
@@ -12,13 +13,8 @@
     <string name="textDuration">Zeitraum des Alkoholkonsums:</string>
     <string name="textDurationUnit">Std.</string>
     <string name="textAlcohol">Menge des Alkoholkonsums:</string>
-    <string name="buttonCalculate">Berechnen</string>
-    <string name="textResultValue">1,5‰</string>
-    <string name="textPromille">(Promille)</string>
-    <string name="buttonNewCalculation">Neue Berechnung</string>
     <string name="textAlcoholtype">Art:</string>
-    <string name="textAlcoholQuantity">Anzahl:</string>
-    <string-array  name="spinnerAlcoholtype">
+    <string-array name="spinnerAlcoholtype">
         <item>Flasche Bier (0.33 l, 4,8 Vol.-%</item>
         <item>Flasche Bier (0.5l, 4,8 Vol.-%</item>
         <item>Glas Bier (0.2 l, 4,8 Vol.-%</item>
@@ -35,7 +31,8 @@
         <item>einfacher Shot (2 cl, 35 Vol.-%)</item>
         <item>doppleter Shot (4 cl, Vol.-%)</item>
     </string-array>
-    <string-array  name="spinnerAlcoholQuantity">
+    <string name="textAlcoholQuantity">Anzahl:</string>
+    <string-array name="spinnerAlcoholQuantity">
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -43,4 +40,15 @@
         <item>5</item>
         <item>6</item>
     </string-array>
+    <string name="buttonCalculate">Berechnen</string>
+    <!--Texte für das Resultfragment-->
+    <string name="textResultValue">1,5‰</string>
+    <string name="textPromille">(Promille)</string>
+    <string name="buttonNewCalculation">Neue Berechnung</string>
+    <!--Texte für das Helpfragment-->
+    <string name="textInfoFormula">Informationen zur Berechnung des Promille-Gehalts:</string>
+    <string name="textAsk">F</string>
+    <string name="textInfoValue">Welche Werte darf ich eingeben?</string>
+    <string name="textInfoResult">Was bedeutet mein Promille-Wert?</string>
+
 </resources>

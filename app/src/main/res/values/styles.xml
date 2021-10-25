@@ -60,4 +60,14 @@
         <item name="android:paddingRight">35dp</item>
         <item name="android:paddingBottom">20dp</item>
     </style>
+    <!--definierter Sytle für das aussehn der Buttons auf der Hilfe-seite-->
+    <style name="buttonAsk">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center|center_horizontal|center_vertical</item>
+        <item name="android:layout_marginLeft">55dp</item>
+        <item name="android:backgroundTint">#79DA7C</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
 </resources>

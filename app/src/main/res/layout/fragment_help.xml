@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HelpFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutInfoFormula"
+            style="@style/layoutHorizontal"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/textInfoFormula"
+                style="@style/textStyleInput"
+                android:text="@string/textInfoFormula" />
+
+            <Button
+                android:id="@+id/buttonInfoFormula"
+                style="@style/buttonAsk"
+                android:text="@string/textAsk"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutInfoValues"
+            style="@style/layoutHorizontal"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/textInfoValue"
+                style="@style/textStyleInput"
+                android:text="@string/textInfoValue" />
+
+            <Button
+                android:id="@+id/buttonInfoValue"
+                style="@style/buttonAsk"
+                android:text="@string/textAsk"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutInfoResult"
+            style="@style/layoutHorizontal"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/textInfoResult"
+                style="@style/textStyleInput"
+                android:text="@string/textInfoResult" />
+
+            <Button
+                android:id="@+id/buttonInfoResult"
+                style="@style/buttonAsk"
+                android:text="@string/textAsk"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
