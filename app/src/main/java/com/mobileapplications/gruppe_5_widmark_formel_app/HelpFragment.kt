@@ -17,7 +17,7 @@ class HelpFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_result, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_help, container, false)
 
         return binding.root
     }
