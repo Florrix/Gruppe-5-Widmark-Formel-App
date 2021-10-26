@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import androidx.navigation.findNavController
-import com.mobileapplications.gruppe_5_widmark_formel_app.R
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
