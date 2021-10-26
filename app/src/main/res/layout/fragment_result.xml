@@ -5,11 +5,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
-
-        <!-- TODO: Update blank fragment layout -->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,7 +31,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -49,13 +47,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textResultHeight"
                 style="@style/textStyleInput"
                 android:text="@string/textHeight" />
+
             <TextView
                 android:id="@+id/resultHeight"
                 style="@style/textUnit"
@@ -64,8 +63,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -81,14 +79,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textResultDuration"
                 style="@style/textStyleInput"
-                android:text="@string/textDuration"/>
+                android:text="@string/textDuration" />
+
             <TextView
                 android:id="@+id/resultDuration"
                 style="@style/textUnit"
@@ -97,10 +95,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"></LinearLayout>
 
         <Button
             android:id="@+id/button"
