@@ -23,6 +23,7 @@
             <Button
                 android:id="@+id/buttonInfoFormula"
                 style="@style/buttonAsk"
+                android:textColor="#212121"
                 android:text="@string/textAsk" />
         </LinearLayout>
         <LinearLayout
@@ -38,6 +39,7 @@
             <Button
                 android:id="@+id/buttonInfoValue"
                 style="@style/buttonAsk"
+                android:textColor="#212121"
                 android:text="@string/textAsk"/>
         </LinearLayout>
         <LinearLayout
@@ -53,6 +55,7 @@
             <Button
                 android:id="@+id/buttonInfoResult"
                 style="@style/buttonAsk"
+                android:textColor="#212121"
                 android:text="@string/textAsk"/>
         </LinearLayout>
 

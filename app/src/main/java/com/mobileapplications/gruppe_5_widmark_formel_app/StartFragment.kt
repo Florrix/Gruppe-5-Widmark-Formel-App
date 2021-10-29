@@ -22,17 +22,29 @@ class StartFragment : Fragment() {
             view.findNavController().navigate(R.id.toResultFragment)
         }
         //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
-        //Dafür wird das String-aaray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
-        val spinner: Spinner = binding.spinnerAlcoholtype
+        //Dafür wird das String-aray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
+        val spinnerAtype: Spinner = binding.spinnerAlcoholQuantity
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.spinnerAlcoholQuantity,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            //Adapter zum Spinner hinzufügen
+            spinnerAtype.adapter = adapter
+        }
+
+        //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
+        //Dafür wird das String-aray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
+        val spinnerAQuantity: Spinner = binding.spinnerAlcoholtype
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.spinnerAlcoholtype,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
+            //Adapter zum Spinner hinzufügen
+            spinnerAQuantity.adapter = adapter
         }
 
         return binding.root
