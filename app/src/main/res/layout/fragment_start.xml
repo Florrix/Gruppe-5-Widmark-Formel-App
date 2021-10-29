@@ -133,7 +133,7 @@
             android:id="@+id/textAlcohol"
             style="@style/textStyleInput"
             android:layout_width="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:text="@string/textAlcohol" />
         <!--dieser Layout definiert die Eingaben der Alkoholmengen-->
         <!--Layout besteht einmal aus dem Text was eingegeben werden soll, und der
@@ -142,8 +142,12 @@
             davon angeggebnw werden-->
         <LinearLayout
             style="@style/textStyleInput"
+            android:layout_weight="0"
             android:layout_width="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:paddingStart="15dp">
 
             <TextView
                 android:id="@+id/textAlcoholtype"
@@ -164,7 +168,10 @@
         <LinearLayout
             style="@style/textStyleInput"
             android:layout_width="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="0"
+            android:padding="0dp"
+            android:paddingStart="15dp">
 
             <TextView
                 android:id="@+id/textAlcoholtQuantity"
