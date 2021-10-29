@@ -19,14 +19,14 @@ class HelpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_help, container, false)
-
+        //wenn der Button gedrückt wurde, wird folgende Methode geööfnet
         binding.buttonInfoFormula.setOnClickListener{
             showInfo()
         }
 
         return binding.root
     }
-
+    // die Methode erstellt ein Dialog fenster, welches dann geöffnet wird, wenn der zuvorherige Button geklickt wird
     private fun showInfo(){
         val builder = AlertDialog.Builder(requireContext())
         //Titel des Dialogs

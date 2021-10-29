@@ -21,7 +21,8 @@ class StartFragment : Fragment() {
         binding.buttonCalculate.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.toResultFragment)
         }
-
+        //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
+        //Dafür wird das String-aaray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
         val spinner: Spinner = binding.spinnerAlcoholtype
         ArrayAdapter.createFromResource(
             requireContext(),
