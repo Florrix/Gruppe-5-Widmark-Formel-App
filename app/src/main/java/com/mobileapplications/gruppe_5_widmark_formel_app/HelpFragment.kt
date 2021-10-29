@@ -2,13 +2,13 @@ package com.mobileapplications.gruppe_5_widmark_formel_app
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.mobileapplications.gruppe_5_widmark_formel_app.R
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentHelpBinding
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
@@ -34,9 +34,20 @@ class HelpFragment : Fragment() {
         binding.buttonInfoResult.setOnClickListener{
             showInfoResult()
         }
-
+        //Anzeigen der Menu-leiste
+        setHasOptionsMenu(true)
         return binding.root
     }
+    //Wenn man auf die Menuleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehöroge Seite verwiesen werden
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
+    }
+
     // die Methode erstellt ein Dialog fenster, welches dann geöffnet wird, wenn der zuvorherige Button geklickt wird
     private fun showInfoFormula(){
         val builder = AlertDialog.Builder(requireContext())
@@ -44,7 +55,8 @@ class HelpFragment : Fragment() {
         builder.setTitle("Widmarck-Formel")
         //Inhalt des Fensters
         builder.setMessage(
-            "Formel vom schwedische Chemiker Erik M. P. Widmark dient zur Bestimmung der theoretischen maximalen Blutalkoholkonzentration" +
+            "- Formel vom schwedische Chemiker Erik M. P. Widmark \n" +
+                    "- dient zur Bestimmung der theoretischen maximalen Blutalkoholkonzentration" +
                     "\n" +
                     "\n"+
                     "w = A / (m * r) \n" +
@@ -55,6 +67,9 @@ class HelpFragment : Fragment() {
                     "bei Männer liegt dieser Wert zwischen: 0,68–0,7 \n" +
                     "und bei Frauen: 0,55–0,60"
         )
+        //Aktion wenn auf Okay geklickt wurde
+        builder.setPositiveButton("Ok") { _, _ ->
+        }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
         infoFormularDialog.setCancelable(false)
@@ -80,6 +95,9 @@ class HelpFragment : Fragment() {
                             "\n"+
                     "Menge: \n du hast die Auswahl zwischen verschiedenen gängigen Alkoholtypen, die voreingestellten Vol. Werte orientieren sich an den typischen Werten.\n"
         )
+        //Aktion wenn auf Okay geklickt wurde
+        builder.setPositiveButton("Ok") { _, _ ->
+        }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
         infoFormularDialog.setCancelable(false)
@@ -130,6 +148,9 @@ class HelpFragment : Fragment() {
                     "Bewusstlosigkeit \n" +
                     "Gefahren durch schwache Atmung"
         )
+        //Aktion wenn auf Okay geklickt wurde
+        builder.setPositiveButton("Ok") { _, _ ->
+        }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
         infoFormularDialog.setCancelable(false)

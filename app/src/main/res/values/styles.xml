@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Farbe für Toolbar anpassen-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">#214222</item>
+        <item name="colorAccent">#7CF180</item>
+    </style>
     <!--definierter Sytle für die Linearlayouts für die Startseite-->
     <style name="layoutHorizontal">
         <item name="android:layout_width">match_parent</item>
@@ -58,6 +64,7 @@
         <item name="android:backgroundTint">@color/primary_color</item>
         <item name="android:paddingLeft">35dp</item>
         <item name="android:paddingTop">20dp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:paddingRight">35dp</item>
         <item name="android:paddingBottom">20dp</item>
     </style>

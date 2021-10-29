@@ -1,14 +1,13 @@
 package com.mobileapplications.gruppe_5_widmark_formel_app
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
@@ -47,6 +46,17 @@ class StartFragment : Fragment() {
             spinnerAQuantity.adapter = adapter
         }
 
+        //Anzeigen der Menu-leiste
+        setHasOptionsMenu(true)
         return binding.root
+    }
+    //Wenn man auf die Menuleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehöroge Seite verwiesen werden
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
     }
 }

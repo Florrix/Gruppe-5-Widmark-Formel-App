@@ -50,5 +50,8 @@
     <string name="textAsk">F</string>
     <string name="textInfoValue">Welche Werte darf ich eingeben?</string>
     <string name="textInfoResult">Was bedeutet mein Promille-Wert?</string>
+    <string name="menu_start">Start</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_all">alle Ergebnisse</string>
 
 </resources>

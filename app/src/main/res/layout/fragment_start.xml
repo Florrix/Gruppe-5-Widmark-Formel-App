@@ -66,6 +66,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textHeightInput"
                 style="@style/InputStyleValue"
+                android:maxLength="3"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
@@ -164,7 +165,6 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
-
         <LinearLayout
             style="@style/textStyleInput"
             android:layout_width="match_parent"
@@ -194,8 +194,7 @@
             android:id="@+id/buttonCalculate"
             style="@style/buttonGreen"
             android:backgroundTint="@color/primary_color"
-            android:text="@string/buttonCalculate"
-            android:textColor="#212121" />
+            android:text="@string/buttonCalculate" />
 
     </LinearLayout>
 </layout>
