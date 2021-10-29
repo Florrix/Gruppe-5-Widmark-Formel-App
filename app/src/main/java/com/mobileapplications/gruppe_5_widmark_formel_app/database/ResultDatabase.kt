@@ -6,7 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [ContactsContract.CommonDataKinds.Note::class], version = 1, exportSchema = false)
+@Database(entities = [Result::class], version = 1, exportSchema = false)
 abstract class ResultDatabase: RoomDatabase() {
     abstract val resultDao: ResultDao
 
