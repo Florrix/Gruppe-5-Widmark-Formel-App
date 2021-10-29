@@ -108,7 +108,7 @@
             </RadioGroup>
         </LinearLayout>
         <!--vierte Anzeige für Eingabewerte
-            der Aufbau istder gleiche wie bei des Gewichts und der Größe-->
+            der Aufbau ist der gleiche wie bei des Gewichts und der Größe-->
         <LinearLayout
             android:id="@+id/layoutDuration"
             style="@style/layoutHorizontal">
@@ -128,80 +128,67 @@
                 style="@style/textUnit"
                 android:text="@string/textDurationUnit" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAlcohol"
+            style="@style/textStyleInput"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="@string/textAlcohol" />
         <!--dieser Layout definiert die Eingaben der Alkoholmengen-->
+        <!--Layout besteht einmal aus dem Text was eingegeben werden soll, und der
+        tatsächliche Eingabespinner-->
+        <!--es sollen einmal das Getränk und einmal die Anzahl an Gläser/Flaschen
+            davon angeggebnw werden-->
         <LinearLayout
-            android:id="@+id/layoutQuantity"
-            style="@style/layoutHorizontal">
+            style="@style/textStyleInput"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textAlcohol"
-                style="@style/textStyleInput"
+                android:id="@+id/textAlcoholtype"
+                style="@style/textUnit"
                 android:layout_weight="0"
-                android:text="@string/textAlcohol" />
-            <!--es sollen einmal das Getränk und einmal die Anzahl an Gläser/Flaschen
-                davon angeggebnw werden-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:text="@string/textAlcoholtype" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textAlcoholtype"
-                            style="@style/textUnit"
-                            android:layout_width="match_parent"
-                            android:gravity="center"
-                            android:text="@string/textAlcoholtype" />
-
-                        <Spinner
-                            android:id="@+id/spinnerAlcoholtype"
-                            style="@style/spinnerAlcohol"
-                            tools:ignore="SpeakableTextPresentCheck"
-                            android:text=""
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textAlcoholQuantity"
-                            style="@style/textUnit"
-                            android:layout_width="match_parent"
-                            android:gravity="center"
-                            android:text="@string/textAlcoholQuantity" />
-
-                        <Spinner
-                            android:id="@+id/spinnerAlcoholQuantity"
-                            style="@style/spinnerAlcohol"
-                            tools:ignore="SpeakableTextPresentCheck" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
+            <Spinner
+                android:id="@+id/spinnerAlcoholtype"
+                style="@style/spinnerAlcohol"
+                android:text=""
+                android:layout_marginLeft="25dp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
+
+        <LinearLayout
+            style="@style/textStyleInput"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textAlcoholtQuantity"
+                style="@style/textUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/textAlcoholQuantity" />
+
+            <Spinner
+                android:id="@+id/spinnerAlcoholQuantity"
+                style="@style/spinnerAlcohol"
+                android:text=""
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/buttonCalculate"
             style="@style/buttonGreen"
             android:backgroundTint="@color/primary_color"
-            android:text="@string/buttonCalculate" />
+            android:text="@string/buttonCalculate"
+            android:textColor="#212121" />
 
     </LinearLayout>
 </layout>
