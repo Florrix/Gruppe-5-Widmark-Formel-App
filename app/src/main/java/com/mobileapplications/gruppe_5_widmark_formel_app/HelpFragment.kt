@@ -7,10 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-<<<<<<< HEAD
-import androidx.appcompat.app.AlertDialog
-=======
->>>>>>> 6e9de27feeae2b5310cedfa4aa1c7e43c6e047dd
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.mobileapplications.gruppe_5_widmark_formel_app.R
@@ -19,7 +15,6 @@ import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentSt
 
 class HelpFragment : Fragment() {
     private lateinit var binding: FragmentHelpBinding
-    lateinit var buttonInfoFormula: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,25 +22,16 @@ class HelpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_help, container, false)
-<<<<<<< HEAD
-       
-        return binding.root
-    }
 
-    }
-=======
-
-        //Dialogfesnter nach dem Öfnnen des Buttons zur Anzeige von den Hintergrundinfo´s zur Formel
-        //dieses soll auf der Seite Hilfe ausgeführt werden
-        //buttonInfoFormula = findViewById<Button>(R.id.buttonInfoFormula)
-
-        //buttonInfoFormula.setOnClickListener { showInfo(buttonInfoFormula) }
+        binding.buttonInfoFormula.setOnClickListener{
+            showInfo()
+        }
 
         return binding.root
     }
 
-    /*private fun showInfo(button: Button){
-        val builder = AlertDialog.Builder(this)
+    private fun showInfo(){
+        val builder = AlertDialog.Builder(requireContext())
         //Titel des Dialogs
         builder.setTitle("Widmarck-Formel")
         //Inhalt des Fensters
@@ -62,14 +48,13 @@ class HelpFragment : Fragment() {
         )
         //Aktion wenn auf Okay geklickt wurde
         builder.setPositiveButton("Ok") { _, _ ->
-            Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Ok", Toast.LENGTH_SHORT).show()
         }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
         infoFormularDialog.setCancelable(false)
         infoFormularDialog.show()
-    }*/
+    }
 
 
 }
->>>>>>> 6e9de27feeae2b5310cedfa4aa1c7e43c6e047dd

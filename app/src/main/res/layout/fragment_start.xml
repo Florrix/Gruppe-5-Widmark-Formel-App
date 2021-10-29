@@ -166,7 +166,9 @@
                         <Spinner
                             android:id="@+id/spinnerAlcoholtype"
                             style="@style/spinnerAlcohol"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                            tools:ignore="SpeakableTextPresentCheck"
+                            android:text=""
+                            />
 
                     </LinearLayout>
 
