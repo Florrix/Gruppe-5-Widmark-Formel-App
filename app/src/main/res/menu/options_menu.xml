@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Erstellung einer Menüliste, mit allen Seiten die man von jeder Seite erreichen kann-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_start"
+        android:id="@+id/menuStart"
         android:title="@string/menu_start" />
     <item
-        android:id="@+id/menu_help"
+        android:id="@+id/menuHelp"
         android:title="@string/menu_help" />
     <item
-        android:id="@+id/menu_all"
+        android:id="@+id/menuAll"
         android:title="@string/menu_all" />
 </menu>

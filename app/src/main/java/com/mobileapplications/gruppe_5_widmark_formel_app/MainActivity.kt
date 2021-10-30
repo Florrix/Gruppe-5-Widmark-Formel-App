@@ -17,8 +17,4 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    // wenn auf ein Eingabefeld geklickt wird, dann erscheint die tastatur,
-    //wenn dann aber nicht mehr auf die tastatur, sondern irgendwo anders auf die tastatur geklickt wird , dann schließtes die tastatur
-        
-
 }

@@ -194,6 +194,7 @@
             android:id="@+id/buttonCalculate"
             style="@style/buttonGreen"
             android:backgroundTint="@color/primary_color"
+            android:onClick="Calculate"
             android:text="@string/buttonCalculate" />
 
     </LinearLayout>

@@ -100,7 +100,7 @@
             android:orientation="horizontal"></LinearLayout>
 
         <Button
-            android:id="@+id/newCalcButton"
+            android:id="@+id/buttonNewCalculate"
             style="@style/buttonGreen"
             android:text="@string/buttonNewCalculation" />
         <Button

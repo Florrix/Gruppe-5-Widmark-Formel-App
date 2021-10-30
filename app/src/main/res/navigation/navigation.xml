@@ -22,6 +22,9 @@
         <action
             android:id="@+id/toHelpFragment"
             app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/toStartFragment"
+            app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"

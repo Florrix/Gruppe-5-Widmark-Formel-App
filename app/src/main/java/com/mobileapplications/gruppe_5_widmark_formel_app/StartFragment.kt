@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.google.android.material.navigation.NavigationView
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
@@ -17,6 +18,7 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
+        //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezigt
         binding.buttonCalculate.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.toResultFragment)
         }
@@ -46,11 +48,11 @@ class StartFragment : Fragment() {
             spinnerAQuantity.adapter = adapter
         }
 
-        //Anzeigen der Menu-leiste
+        //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
         return binding.root
     }
-    //Wenn man auf die Menuleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
+    //Wenn man auf die Menüleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
