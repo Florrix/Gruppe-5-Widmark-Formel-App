@@ -5,9 +5,7 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentResultBinding
-import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 
 class ResultFragment : Fragment() {
     private lateinit var binding: FragmentResultBinding
@@ -21,11 +19,11 @@ class ResultFragment : Fragment() {
         //Wenn auf den Button berechnen geklickt wird, dann wird wieder die Seite mit den Eingabewerten angezeigt angezeigt
         binding.buttonNewCalculate.setOnClickListener {
                 view: View ->
-            view.findNavController().navigate(R.id.toStartFragment)
+            view.findNavController().navigate(R.id.resultToStart)
         }
         //kommt noch weg wenn Menu funktioniert
         binding.helpButton.setOnClickListener{
-                view: View -> view.findNavController().navigate(R.id.toHelpFragment)
+                view: View -> view.findNavController().navigate(R.id.resultToHelp)
         }
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
@@ -36,8 +34,43 @@ class ResultFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
-    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehöroge Seite verwiesen werden
+    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehörige Seite verwiesen werden
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
+        //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
+        return when(item.itemId){
+            //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
+            //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
+            R.id.menuHelp-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.resultToHelp)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }
+            //das gleiche gilt wenn das Item für alle ergebnisse geklickt wird ausgeführt
+            R.id.menuStart-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.resultToStart)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }
+            /*
+            R.id.menuAll-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.startToAll)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }*/
+            else -> false
+        }
+
     }
 }

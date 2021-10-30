@@ -30,7 +30,7 @@ class HelpFragment : Fragment() {
         binding.buttonInfoValue.setOnClickListener{
             showInfoValue()
         }
-        //wenn der Button gedrückt wurde, wird folgende Methode geööfnet
+        //wenn der Button gedrückt wurde, wird folgende Methode geöfnet
         binding.buttonInfoResult.setOnClickListener{
             showInfoResult()
         }
@@ -38,14 +38,49 @@ class HelpFragment : Fragment() {
         setHasOptionsMenu(true)
         return binding.root
     }
-    //Wenn man auf die Menuleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
+    //Wenn man auf die Menüleiste klickt, sollte die zuvor in der options_menu.xml erstellte Liste angezeigt werden
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
-    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehöroge Seite verwiesen werden
+    //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehörige Seite verwiesen werden
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item,requireView().findNavController())
+        //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
+        return when(item.itemId){
+            //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
+            //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
+            R.id.menuHelp-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.helpToResult)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }
+            //das gleiche gilt wenn das Item für alle ergebnisse geklickt wird ausgeführt
+            R.id.menuStart-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.helpToStart)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }
+            /*
+            R.id.menuAll-> {
+                try {
+                    view?.findNavController()?.navigate(R.id.startToAll)
+                    true
+                } catch (ex:Exception) {
+                    false
+                }
+
+            }*/
+            else -> false
+        }
+
     }
 
     // die Methode erstellt ein Dialog fenster, welches dann geöffnet wird, wenn der zuvorherige Button geklickt wird
@@ -156,6 +191,7 @@ class HelpFragment : Fragment() {
         infoFormularDialog.setCancelable(false)
         infoFormularDialog.show()
     }
+
 
 
 }

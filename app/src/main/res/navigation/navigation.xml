@@ -11,8 +11,11 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_start">
         <action
-            android:id="@+id/toResultFragment"
+            android:id="@+id/startToResult"
             app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/startToHelp"
+            app:destination="@id/helpFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -20,15 +23,22 @@
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
-            android:id="@+id/toHelpFragment"
+            android:id="@+id/resultToHelp"
             app:destination="@id/helpFragment" />
         <action
-            android:id="@+id/toStartFragment"
+            android:id="@+id/resultToStart"
             app:destination="@id/startFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.mobileapplications.gruppe_5_widmark_formel_app.HelpFragment"
         android:label="fragment_help"
-        tools:layout="@layout/fragment_help" />
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/helpToResult"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/helpToStart"
+            app:destination="@id/startFragment" />
+    </fragment>
 </navigation>
