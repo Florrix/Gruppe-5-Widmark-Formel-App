@@ -59,7 +59,7 @@ class ResultFragment : Fragment() {
                 }
 
             }
-            /*
+
             R.id.menuAll-> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToAll)
@@ -68,7 +68,7 @@ class ResultFragment : Fragment() {
                     false
                 }
 
-            }*/
+            }
             else -> false
         }
 

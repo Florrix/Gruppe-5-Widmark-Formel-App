@@ -39,6 +39,10 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
     <string name="buttonCalculate">Berechnen</string>
     <!--Texte für das Resultfragment-->
@@ -53,5 +57,6 @@
     <string name="menu_start">Start</string>
     <string name="menu_help">Hilfe</string>
     <string name="menu_all">alle Ergebnisse</string>
+    <string name="headLineAllResults">Alle Ergebnisse</string>
 
 </resources>

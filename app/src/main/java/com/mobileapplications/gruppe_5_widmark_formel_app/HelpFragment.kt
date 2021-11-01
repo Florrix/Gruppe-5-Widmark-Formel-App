@@ -68,7 +68,7 @@ class HelpFragment : Fragment() {
                 }
 
             }
-            /*
+
             R.id.menuAll-> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToAll)
@@ -77,7 +77,7 @@ class HelpFragment : Fragment() {
                     false
                 }
 
-            }*/
+            }
             else -> false
         }
 
