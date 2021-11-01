@@ -40,6 +40,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textWeightInput"
                 style="@style/InputStyleValue"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:hint="175"
+                android:maxLength="3"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <!--TextView mit einer bestimmten ID und einem erstellten Sytle-->
@@ -66,6 +70,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textHeightInput"
                 style="@style/InputStyleValue"
+                android:hint="75"
                 android:maxLength="3"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -122,6 +127,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textDurationInput"
                 style="@style/InputStyleValue"
+                android:hint="2,5"
+                android:maxLength="4"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView

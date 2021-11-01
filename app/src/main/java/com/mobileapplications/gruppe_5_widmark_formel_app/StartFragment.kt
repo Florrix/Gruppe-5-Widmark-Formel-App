@@ -1,9 +1,13 @@
 package com.mobileapplications.gruppe_5_widmark_formel_app
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -45,11 +49,11 @@ class StartFragment : Fragment() {
             //Adapter zum Spinner hinzufügen
             spinnerAQuantity.adapter = adapter
         }
-
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
         return binding.root
     }
+
     //Wenn man auf die Menüleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -94,4 +98,5 @@ class StartFragment : Fragment() {
         }
 
     }
+
 }
