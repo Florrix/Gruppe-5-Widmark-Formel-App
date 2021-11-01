@@ -27,6 +27,7 @@ class StartFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
         //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezeigt
         binding.buttonCalculate.setOnClickListener { view: View ->
+
             view.findNavController().navigate(R.id.startToResult)
         }
 
@@ -57,6 +58,7 @@ class StartFragment : Fragment() {
         }
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -65,6 +67,7 @@ class StartFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
+
     //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehörige Seite verwiesen werden
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
@@ -102,6 +105,10 @@ class StartFragment : Fragment() {
             }
             else -> false
         }
+
+    }
+
+    fun calculatePromille(weight: String, height : String, ){
 
     }
 
