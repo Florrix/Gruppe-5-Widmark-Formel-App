@@ -1,20 +1,35 @@
 package com.mobileapplications.gruppe_5_widmark_formel_app
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View
 //import android.view.Menu
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultDatabase
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
+import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.ActivityMainBinding
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.ActivityMainViewModel
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.ActivityMainViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
+        binding = DataBindingUtil.setContentView(
+            this,
+            R.layout.activity_main
+        )
+        val database =
+            ResultDatabase.getInstance(application)
+        val noteRepository =
+            ResultRepository(database.resultDao)
+        val viewModelFactory =
+            ActivityMainViewModelFactory(noteRepository)
+        val mainActivityViewModel =
+            ViewModelProvider(
+                this,
+                viewModelFactory
+            ).get(ActivityMainViewModel::class.java)
+        binding.viewModel = mainActivityViewModel
     }
 }

@@ -5,11 +5,11 @@
     tools:context=".StartFragment">
     <!--festlegen des gesamten Layouts der Startseite   -->
 
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="viewModel"-->
-<!--            type="com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModel" />-->
-<!--    </data>-->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.mobileapplications.gruppe_5_widmark_formel_app.model.ActivityMainViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,8 +47,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textWeightInput"
                 style="@style/InputStyleValue"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultWeight"/>
+                android:text="@={viewModel.resultWeight}"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <!--TextView mit einer bestimmten ID und einem erstellten Sytle-->
             <!--der erstellte Sytle kann für weitere TextViews verwendet werden,
@@ -75,8 +75,8 @@
                 android:id="@+id/textHeightInput"
                 style="@style/InputStyleValue"
                 android:maxLength="3"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultHeight"/>
+                android:text="@string/resultHeight"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -132,8 +132,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textDurationInput"
                 style="@style/InputStyleValue"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultDuration"/>
+                android:text="@string/resultDuration"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/textDurationUnit"
@@ -154,9 +154,9 @@
             davon angeggebnw werden-->
         <LinearLayout
             style="@style/textStyleInput"
-            android:layout_weight="0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0"
             android:orientation="horizontal"
             android:padding="0dp"
             android:paddingStart="15dp">
@@ -171,16 +171,17 @@
             <Spinner
                 android:id="@+id/spinnerAlcoholtype"
                 style="@style/spinnerAlcohol"
-                android:text=""
                 android:layout_marginLeft="25dp"
+                android:text=""
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
+
         <LinearLayout
             style="@style/textStyleInput"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
             android:layout_weight="0"
+            android:orientation="horizontal"
             android:padding="0dp"
             android:paddingStart="15dp">
 
@@ -205,7 +206,8 @@
             android:id="@+id/buttonCalculate"
             style="@style/buttonGreen"
             android:backgroundTint="@color/primary_color"
-            android:text="@string/buttonCalculate"/>
+            android:text="@string/buttonCalculate"
+            android:onClick="@{() -> viewModel.insert()}"/>
 
     </LinearLayout>
 </layout>
