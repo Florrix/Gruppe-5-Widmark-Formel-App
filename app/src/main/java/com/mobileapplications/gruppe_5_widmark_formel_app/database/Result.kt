@@ -9,6 +9,9 @@ data class Result(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
 
+    @ColumnInfo(name = "promille")
+    val promille: String,
+
     @ColumnInfo(name = "weight")
     val weight: String,
 
