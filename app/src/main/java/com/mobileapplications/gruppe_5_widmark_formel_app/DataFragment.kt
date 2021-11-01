@@ -27,24 +27,5 @@ class DataFragment : AppCompatActivity() {
         ).get(DataFragmentViewModel::class.java)
         binding.viewModel = dataFragmentViewmodel
 
-        binding.submitDataButton.setOnClickListener{
-        }
-    }
-
-    fun insertData(
-        promille: String,
-        weight: String,
-        height: String,
-        gender: String,
-        duration: String,
-        quantity: String
-    ) {
-        binding.viewModel.resultPromille = promille
-        binding.viewModel.resultWeight = weight
-        binding.viewModel.resultHeight = height
-        binding.viewModel.resultGender = gender
-        binding.viewModel.resultDuration = duration
-        binding.viewModel.resultQuantity = quantity
-        binding.viewModel.insert()
     }
 }

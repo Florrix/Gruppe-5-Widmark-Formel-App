@@ -108,8 +108,5 @@ class StartFragment : Fragment() {
 
     }
 
-    fun calculatePromille(weight: String, height : String, ){
-
-    }
 
 }
