@@ -16,6 +16,9 @@
         <action
             android:id="@+id/startToHelp"
             app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/startToAll"
+            app:destination="@id/dataFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -28,6 +31,9 @@
         <action
             android:id="@+id/resultToStart"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/resultToAll"
+            app:destination="@id/dataFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
@@ -40,5 +46,13 @@
         <action
             android:id="@+id/helpToStart"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/helpToAll"
+            app:destination="@id/dataFragment" />
     </fragment>
+    <activity
+        android:id="@+id/dataFragment"
+        android:name="com.mobileapplications.gruppe_5_widmark_formel_app.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" />
 </navigation>

@@ -10,8 +10,13 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultDatabase
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModel
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModelFactory
 
 class StartFragment : Fragment() {
     private lateinit var binding: FragmentStartBinding
@@ -20,10 +25,12 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
-        //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezigt
+        //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezeigt
         binding.buttonCalculate.setOnClickListener { view: View ->
+
             view.findNavController().navigate(R.id.startToResult)
         }
+
         //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
         //Dafür wird das String-aray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
         val spinnerAtype: Spinner = binding.spinnerAlcoholQuantity
@@ -51,6 +58,7 @@ class StartFragment : Fragment() {
         }
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -59,6 +67,7 @@ class StartFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
+
     //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehörige Seite verwiesen werden
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
@@ -84,7 +93,7 @@ class StartFragment : Fragment() {
                 }
 
             }
-            /*
+
             R.id.menuAll-> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToAll)
@@ -93,10 +102,11 @@ class StartFragment : Fragment() {
                     false
                 }
 
-            }*/
+            }
             else -> false
         }
 
     }
+
 
 }

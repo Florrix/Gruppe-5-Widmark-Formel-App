@@ -6,7 +6,7 @@ import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import kotlinx.coroutines.launch
 
-class DataFragmentViewModel(
+class ActivityMainViewModel(
     private val repository: ResultRepository
 ) : ViewModel() {
     var resultPromille = ""

@@ -1,14 +1,9 @@
 package com.mobileapplications.gruppe_5_widmark_formel_app
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultDatabase
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentDataBinding
@@ -31,5 +26,6 @@ class DataFragment : AppCompatActivity() {
             viewModelFactory
         ).get(DataFragmentViewModel::class.java)
         binding.viewModel = dataFragmentViewmodel
+
     }
 }

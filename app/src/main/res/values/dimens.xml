@@ -5,4 +5,5 @@
     <dimen name="textInputFieldWidth">130dp</dimen>
     <dimen name="marginEnd">25dp</dimen>
     <dimen name="textFieldWidth">200dp</dimen>
+    <dimen name="headlineTextSize">20dp</dimen>
 </resources>
