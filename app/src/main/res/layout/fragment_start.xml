@@ -15,6 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
         <!--festlegen des Bereichs zu Eingabe der Werte-->
         <!--Aufbau eines Linear-Layouts:
             1. Vergabe einer ID
@@ -23,9 +25,11 @@
             4. Input-Feld dient zur Eingabe des Wertes
             5. TextView: dient zur Hilfe welche Einheit der Wert hat-->
         <!--als erstes kommt die Einagbe des Gewichts-->
+
         <LinearLayout
             android:id="@+id/layoutWeight"
             style="@style/layoutHorizontal"
+            android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp">
 
@@ -47,8 +51,17 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textWeightInput"
                 style="@style/InputStyleValue"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultWeight"/>
+                android:maxLength="3"
+                android:text=""
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/WeightView"
+                style="@style/textUnit"
+                android:backgroundTint="@color/accent_color"
+                android:text=""
+                android:textColor="@color/primaryDark_color"
+                android:visibility="gone" />
 
             <!--TextView mit einer bestimmten ID und einem erstellten Sytle-->
             <!--der erstellte Sytle kann für weitere TextViews verwendet werden,
@@ -58,6 +71,15 @@
                 android:id="@+id/textWeightUnit"
                 style="@style/textUnit"
                 android:text="@string/unitWeight" />
+
+            <Button
+                android:id="@+id/buttonWeightDone"
+                style="@style/buttonDone"
+                android:layout_width="40dp"
+                android:layout_height="48dp"
+                android:onClick="addWeightValue"
+                android:text="@string/textDone"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!--Aufbau eines weiteren Layouts für die Eingabe der Größe,
@@ -76,12 +98,24 @@
                 style="@style/InputStyleValue"
                 android:maxLength="3"
                 tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultHeight"/>
-
+                android:text=""/>
+            <TextView
+                android:id="@+id/HeightView"
+                style="@style/textUnit"
+                android:textColor="@color/primaryDark_color"
+                android:visibility="gone"
+                android:text="" />
             <TextView
                 android:id="@+id/textView10"
                 style="@style/textUnit"
                 android:text="@string/unitHeight" />
+
+            <Button
+                android:id="@+id/buttonHeightDone"
+                style="@style/buttonDone"
+                android:layout_height="48dp"
+                android:onClick="addHeightValue"
+                android:text="@string/textDone" />
         </LinearLayout>
 
         <!--dieser Layout beinhaltet Elemente für die Angabe des Geschlechts-->
@@ -132,13 +166,26 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textDurationInput"
                 style="@style/InputStyleValue"
+                android:maxLength="4"
                 tools:ignore="SpeakableTextPresentCheck"
-                android:text="@string/resultDuration"/>
-
+                android:text=""/>
+            <TextView
+                android:id="@+id/DurationView"
+                style="@style/textUnit"
+                android:visibility="gone"
+                android:textColor="@color/primaryDark_color"
+                android:text="" />
             <TextView
                 android:id="@+id/textDurationUnit"
                 style="@style/textUnit"
                 android:text="@string/textDurationUnit" />
+
+            <Button
+                android:id="@+id/buttonDurationDone"
+                style="@style/buttonDone"
+                android:layout_height="48dp"
+                android:onClick="addDurationValue"
+                android:text="@string/textDone" />
         </LinearLayout>
 
         <TextView
@@ -206,6 +253,9 @@
             style="@style/buttonGreen"
             android:backgroundTint="@color/primary_color"
             android:text="@string/buttonCalculate"/>
+
+
+
 
     </LinearLayout>
 </layout>

@@ -27,5 +27,6 @@ class DataFragment : AppCompatActivity() {
         ).get(DataFragmentViewModel::class.java)
         binding.viewModel = dataFragmentViewmodel
 
+
     }
 }

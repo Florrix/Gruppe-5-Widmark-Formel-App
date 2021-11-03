@@ -22,9 +22,9 @@ class ResultFragment : Fragment() {
             view.findNavController().navigate(R.id.resultToStart)
         }
         //kommt noch weg wenn Menu funktioniert
-        binding.helpButton.setOnClickListener{
+        /*binding.helpButton.setOnClickListener{
                 view: View -> view.findNavController().navigate(R.id.resultToHelp)
-        }
+        }*/
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
         return binding.root

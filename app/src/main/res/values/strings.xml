@@ -73,6 +73,7 @@
     <string name="totalSumAlcohol">20</string>
     <string name="textTotalSumAlcoholUnit">ml</string>
     <string name="textTotalSumAlcohol">Gesamtmenge Alkohol</string>
+    <string name="textDone">✓</string>
 
 
 </resources>

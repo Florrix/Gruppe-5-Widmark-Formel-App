@@ -22,15 +22,15 @@ class HelpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_help, container, false)
-        //wenn der Button gedrückt wurde, wird folgende Methode geööfnet
+        //wenn der Button gedrückt wurde, wird folgende Methode geöffnet
         binding.buttonInfoFormula.setOnClickListener{
             showInfoFormula()
         }
-        //wenn der Button gedrückt wurde, wird folgende Methode geööfnet
+        //wenn der Button gedrückt wurde, wird folgende Methode geöffnet
         binding.buttonInfoValue.setOnClickListener{
             showInfoValue()
         }
-        //wenn der Button gedrückt wurde, wird folgende Methode geöfnet
+        //wenn der Button gedrückt wurde, wird folgende Methode geöffnet
         binding.buttonInfoResult.setOnClickListener{
             showInfoResult()
         }
@@ -49,7 +49,7 @@ class HelpFragment : Fragment() {
         return when(item.itemId){
             //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
             //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
-            R.id.menuHelp-> {
+            /*R.id.menuHelp-> {
                 try {
                     view?.findNavController()?.navigate(R.id.helpToResult)
                     true
@@ -57,7 +57,7 @@ class HelpFragment : Fragment() {
                     false
                 }
 
-            }
+            }*/
             //das gleiche gilt wenn das Item für alle ergebnisse geklickt wird ausgeführt
             R.id.menuStart-> {
                 try {

@@ -84,7 +84,7 @@ class StartFragment : Fragment() {
 
             }
             //das gleiche gilt wenn das Item Start geklickt wird und somit die passende Navigation ausgeführt wird
-            R.id.menuStart -> {
+            /*R.id.menuStart -> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToResult)
                     true
@@ -92,7 +92,7 @@ class StartFragment : Fragment() {
                     false
                 }
 
-            }
+            }*/
 
             R.id.menuAll-> {
                 try {
@@ -103,6 +103,7 @@ class StartFragment : Fragment() {
                 }
 
             }
+
             else -> false
         }
 
