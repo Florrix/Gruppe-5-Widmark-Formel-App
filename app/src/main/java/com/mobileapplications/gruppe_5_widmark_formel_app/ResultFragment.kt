@@ -28,7 +28,6 @@ class ResultFragment : Fragment() {
 
         val args = ResultFragmentArgs.fromBundle((requireArguments()))
         binding.resultWeight.text = args.weight
-        binding.resultHeight.text = args.height
         binding.resultGender.text = args.gender
         binding.resultDuration.text = args.duration
         binding.totalSumAlcohol.text = args.totalPureAlcohol
@@ -69,9 +68,9 @@ class ResultFragment : Fragment() {
 
             }
 
-            R.id.menuAll-> {
+            R.id.menuData-> {
                 try {
-                    view?.findNavController()?.navigate(R.id.startToAll)
+                    view?.findNavController()?.navigate(R.id.startToData)
                     true
                 } catch (ex:Exception) {
                     false

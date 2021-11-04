@@ -1,23 +1,14 @@
 package com.mobileapplications.gruppe_5_widmark_formel_app
 
-import android.content.Context
 import android.os.Bundle
 import android.view.*
-import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.text.isDigitsOnly
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultDatabase
-import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
-import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModel
-import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModelFactory
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -61,17 +52,15 @@ class StartFragment : Fragment() {
                 }
             }
             val weight = binding.textWeightInput.text.toString()
-            val height = binding.textHeightInput.text
-            val duration = binding.textDurationInput.text
+            val duration = binding.textDurationInput.text.toString()
             val quantity = binding.spinnerAlcoholQuantity.selectedItem.toString()
             val pureAlcoholPerDrink =
                 alcoholMapping.get(binding.spinnerAlcoholtype.selectedItem).toString()
+                    .toDouble() * 0.79
 
             if (weight.isNullOrEmpty()
-                || height.isNullOrEmpty()
                 || duration.isNullOrEmpty()
                 || quantity.isNullOrEmpty()
-                || pureAlcoholPerDrink.isNullOrEmpty()
                 || genderStr.equals("")
             ) {
                 Toast.makeText(
@@ -81,15 +70,17 @@ class StartFragment : Fragment() {
                 ).show();
             } else {
                 val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
-                val promille =
-                    BigDecimal(totalPureAlcohol / (genderFactor.toDouble() * weight.toDouble()))
-                        .setScale(2, RoundingMode.HALF_EVEN)
-
+                var promille = BigDecimal(
+                    (totalPureAlcohol / (genderFactor.toDouble() * weight.toDouble()) - 0.15 * duration.toDouble())
+                )
+                    .setScale(2, RoundingMode.HALF_EVEN)
+                if(promille < BigDecimal(0)){
+                    promille = BigDecimal(0)
+                }
                 view.findNavController()
                     .navigate(
                         StartFragmentDirections.startToResult(
                             weight.toString(),
-                            height.toString(),
                             genderStr,
                             duration.toString(),
                             promille.toString(),
@@ -176,9 +167,9 @@ class StartFragment : Fragment() {
 
             }*/
 
-            R.id.menuAll -> {
+            R.id.menuData -> {
                 try {
-                    view?.findNavController()?.navigate(R.id.startToAll)
+                    view?.findNavController()?.navigate(R.id.startToData)
                     true
                 } catch (ex: Exception) {
                     false

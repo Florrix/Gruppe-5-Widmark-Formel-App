@@ -85,40 +85,7 @@
 
         <!--Aufbau eines weiteren Layouts für die Eingabe der Größe,
             der der gleiche ist wie für die Eingabe des Gewichts-->
-        <LinearLayout
-            android:id="@+id/layoutHeight"
-            style="@style/layoutHorizontal">
-
-            <TextView
-                android:id="@+id/textHeight"
-                style="@style/textStyleInput"
-                android:text="@string/textHeight" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textHeightInput"
-                style="@style/InputStyleValue"
-                android:maxLength="3"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:text=""
-                android:inputType="number"/>
-            <TextView
-                android:id="@+id/HeightView"
-                style="@style/textUnit"
-                android:textColor="@color/primaryDark_color"
-                android:visibility="gone"
-                android:text="" />
-            <TextView
-                android:id="@+id/textView10"
-                style="@style/textUnit"
-                android:text="@string/unitHeight" />
-
-            <Button
-                android:id="@+id/buttonHeightDone"
-                style="@style/buttonDone"
-                android:layout_height="48dp"
-                android:onClick="addHeightValue"
-                android:text="@string/textDone" />
-        </LinearLayout>
+        
 
         <!--dieser Layout beinhaltet Elemente für die Angabe des Geschlechts-->
         <LinearLayout

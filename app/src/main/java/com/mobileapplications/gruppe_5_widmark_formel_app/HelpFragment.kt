@@ -3,15 +3,10 @@ package com.mobileapplications.gruppe_5_widmark_formel_app
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
-import com.mobileapplications.gruppe_5_widmark_formel_app.R
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentHelpBinding
-import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 
 class HelpFragment : Fragment() {
     private lateinit var binding: FragmentHelpBinding
@@ -69,9 +64,9 @@ class HelpFragment : Fragment() {
 
             }
 
-            R.id.menuAll-> {
+            R.id.menuData-> {
                 try {
-                    view?.findNavController()?.navigate(R.id.startToAll)
+                    view?.findNavController()?.navigate(R.id.startToData)
                     true
                 } catch (ex:Exception) {
                     false

@@ -17,7 +17,7 @@
             android:id="@+id/startToHelp"
             app:destination="@id/helpFragment" />
         <action
-            android:id="@+id/startToAll"
+            android:id="@+id/startToData"
             app:destination="@id/dataFragment" />
     </fragment>
     <fragment
@@ -32,13 +32,10 @@
             android:id="@+id/resultToStart"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/resultToAll"
+            android:id="@+id/resultToData"
             app:destination="@id/dataFragment" />
         <argument
             android:name="weight"
-            app:argType="string" />
-        <argument
-            android:name="height"
             app:argType="string" />
         <argument
             android:name="gender"
@@ -65,7 +62,7 @@
             android:id="@+id/helpToStart"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/helpToAll"
+            android:id="@+id/helpToData"
             app:destination="@id/dataFragment" />
     </fragment>
     <activity

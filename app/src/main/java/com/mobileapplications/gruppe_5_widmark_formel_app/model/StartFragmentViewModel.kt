@@ -11,7 +11,6 @@ class StartFragmentViewModel(
 ) : ViewModel() {
     var resultPromille = ""
     var resultWeight = ""
-    var resultHeight = ""
     var resultGender = ""
     var resultDuration = ""
     var resultQuantity = ""
@@ -22,7 +21,6 @@ class StartFragmentViewModel(
                 0,
                 resultPromille,
                 resultWeight,
-                resultHeight,
                 resultGender,
                 resultDuration,
                 resultQuantity

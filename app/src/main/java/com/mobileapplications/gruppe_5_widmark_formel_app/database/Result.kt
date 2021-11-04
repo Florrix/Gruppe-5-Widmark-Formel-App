@@ -15,9 +15,6 @@ data class Result(
     @ColumnInfo(name = "weight")
     val weight: String,
 
-    @ColumnInfo(name = "height")
-    val height: String,
-
     @ColumnInfo(name = "gender")
     val gender: String,
 

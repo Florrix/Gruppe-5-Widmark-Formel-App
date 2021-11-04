@@ -9,6 +9,6 @@
         android:id="@+id/menuHelp"
         android:title="@string/menu_help" />
     <item
-        android:id="@+id/menuAll"
+        android:id="@+id/menuData"
         android:title="@string/menu_all" />
 </menu>

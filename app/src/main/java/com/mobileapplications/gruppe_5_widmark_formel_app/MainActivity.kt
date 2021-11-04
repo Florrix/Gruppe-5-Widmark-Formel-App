@@ -18,18 +18,12 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.buttonWeightDone).setOnClickListener {
             addWeightValue(it)
         }
-        findViewById<Button>(R.id.buttonHeightDone).setOnClickListener {
-            addHeightValue(it)
-        }
         findViewById<Button>(R.id.buttonDurationDone).setOnClickListener {
             addDurationValue(it)
         }
         //Wenn ein eingegebner Wert geändert werden soll, dann klickt man auf das TextView und dann öffnet sich die Änderungsmethode
         findViewById<TextView>(R.id.WeightView).setOnClickListener {
             updateWeight(it)
-        }
-        findViewById<TextView>(R.id.HeightView).setOnClickListener {
-            updateHeight(it)
         }
         findViewById<TextView>(R.id.DurationView).setOnClickListener {
             updateDuration(it)
@@ -57,29 +51,7 @@ class MainActivity : AppCompatActivity() {
                 InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
-    //-----------Eingabevorgang für die Größe ---------------------------------------
-    fun addHeightValue(view: View) {
-        //Um den Wert von dem Eingabefeld der Größe zu bekommen
-        val editHeight= findViewById<EditText>(R.id.textHeightInput)
-        //Und die textViews, wo dann die Werte eingefügt werden sollen
-        val heigtView = findViewById<TextView>(R.id.HeightView)
-        //wenn das Eingabefeld von dem gewicht ausgewählt wurde, dann setze den eingegebenenText auf das Anzeige-textView
-        heigtView.text = editHeight.text
-        //Button wieder anzeigen, daa er standardmäßig, wenn noch nix passiert ist, nicht zu sehen ist
-        view.visibility= View.VISIBLE
-        //Eingabefeld ausblenden
-        editHeight.visibility= View.GONE
-        //und button wieder ausblenden
-        view.visibility= View.GONE
 
-
-        //Text anzeigen
-        heigtView.visibility=View.VISIBLE
-        // Danach Tastatur verschwinden lassen
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as
-                InputMethodManager
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
-    }
     //------------- Einagbevorgang für die Drinkdauer
     fun addDurationValue(view: View) {
         //Um den Wert von der Trinkdauer zu bekommen
@@ -119,22 +91,7 @@ class MainActivity : AppCompatActivity() {
                 InputMethodManager
         imm.showSoftInput(editWeight, 0)
     }
-    //-------------Wert des Größe setzen ------------------------
-    private fun updateHeight (view:View) {
-        val editHeight= findViewById<EditText>(R.id.textHeightInput)
-        val heigtView = findViewById<TextView>(R.id.HeightView)
-        val done= findViewById<Button>(R.id.buttonHeightDone)
 
-        // EditText und Button anzeigen, aber das TextView wo der Text drin steht muss wieder unsichtbar gemacht werden
-        editHeight.visibility= View.VISIBLE
-        heigtView.visibility= View.GONE
-        done.visibility=View.VISIBLE
-
-        //Tastatur wieder anzeigen
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as
-                InputMethodManager
-        imm.showSoftInput(editHeight, 0)
-    }
     //-------------Wert der Drinkdauer setzen ------------------------
     private fun updateDuration (view:View) {
         val editDuartion= findViewById<EditText>(R.id.textDurationInput)
