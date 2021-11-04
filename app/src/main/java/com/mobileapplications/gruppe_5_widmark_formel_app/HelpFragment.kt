@@ -112,18 +112,18 @@ class HelpFragment : Fragment() {
         builder.setTitle("gültige Werte")
         //Inhalt des Fensters
         builder.setMessage(
-                    "Gewicht: \n Angabe des Körpergewichts in kg \n " +
-                    "Dabei gibst du die Zahl ein, die bei dir auf der Waage steht \n" +
+                    "Gewicht: \n - Angabe des Körpergewichts in kg \n " +
+                    "- Dabei gibst du die Zahl ein, die bei dir auf der Waage steht \n" +
                     "Zulässig ist dabei hier alles von 40-300kg. \n" +
                             "\n"+
-                    "Größe: \n die Größe wird in cm angegeben \n Das heißt, wenn du z.B. 1,55m groß bist, gibst du 155 cm ein." +
-                    "dabei sind alle werte zulässig von 130(1,30m) und 220(2,20m)\n" +
+                    "Größe: \n - die Größe wird in cm angegeben \n - Das heißt, wenn du z.B. 1,55m groß bist, gibst du 155 cm ein. \n" +
+                    "- dabei sind alle werte zulässig von 130(1,30m) und 220(2,20m)\n" +
                             "\n"+
-                    "Geschlecht: \n wir unterscheiden hier zwischen männlich und weiblich, da die Berechnung derzeit nur dafür ausgelegt ist\n" +
+                    "Geschlecht: \n - wir unterscheiden hier zwischen männlich und weiblich, da die Berechnung derzeit nur dafür ausgelegt ist\n" +
                             "\n"+
-                    "Dauer: \n die Angabe ist in Std., dass heißt wenn du 30 mi Alkohol getrunken hast, gibst du 0,5 h ein\n" +
+                    "Dauer: \n - die Angabe ist in Std., dass heißt wenn du 30 mi Alkohol getrunken hast, gibst du 0,5 h ein\n" +
                             "\n"+
-                    "Menge: \n du hast die Auswahl zwischen verschiedenen gängigen Alkoholtypen, die voreingestellten Vol. Werte orientieren sich an den typischen Werten.\n"
+                    "Menge: \n - du hast die Auswahl zwischen verschiedenen gängigen Alkoholtypen, die voreingestellten Vol. Werte orientieren sich an den typischen Werten.\n"
         )
         //Aktion wenn auf Okay geklickt wurde
         builder.setPositiveButton("Ok") { _, _ ->
@@ -141,42 +141,42 @@ class HelpFragment : Fragment() {
         //Inhalt des Fensters
         builder.setMessage(
             "0,1‰ - 0,3‰: \n " +
-                    "man ist kontaktfreudiger\n" +
-                    "man macht erste Fehler" +
+                    "- man ist kontaktfreudiger\n" +
+                    "- man macht erste Fehler" +
                     "\n" +
                     "\n" +
                     "0,3‰ - 0,5‰:" +
-                    "verlangsamte Reaktion und Aufmerksamkeit \n" +
-                    "Risikobereitschaft steigt \n" +
-                    "man kann weniger sehen und hören" +
-                    "man schätzt Geschwindigkeite falsch ein"+
+                    "- verlangsamte Reaktion und Aufmerksamkeit \n" +
+                    "- Risikobereitschaft steigt \n" +
+                    "- man kann weniger sehen und hören" +
+                    "- man schätzt Geschwindigkeite falsch ein"+
                     "\n"+
                     "\n" +
                 "0,5‰ - 0,8‰: \n" +
-                "fehlende Konzentrationsfähigkeiten \n" +
-                    "verkleindertes Sichtfeld \n" +
-                    "deutlich schlechtere Reaktionszeit \n" +
-                    "Gleichgewichtsstörrungen"+
+                "- fehlende Konzentrationsfähigkeiten \n" +
+                    "- verkleindertes Sichtfeld \n" +
+                    "- deutlich schlechtere Reaktionszeit \n" +
+                    "- Gleichgewichtsstörrungen"+
                     "\n"+
                     "\n" +
                     "1,0‰ - 2,0‰: \n" +
-                    "schlechtere Sehfähigkeit\n" +
-                    "kein Räumliches Sehen mehr \n" +
-                    "Sprach- Reaktions- und Gleichgewichtsprobleme sind sehr stark ausgeprägt \n" +
-                    "Orientierungslosigkeit"+
+                    "- schlechtere Sehfähigkeit\n" +
+                    "- kein Räumliches Sehen mehr \n" +
+                    "- Sprach- Reaktions- und Gleichgewichtsprobleme sind sehr stark ausgeprägt \n" +
+                    "- Orientierungslosigkeit"+
                     "\n"+
                     "\n" +
                     "2,0‰ - 3,0‰: \n" +
-                    "unkontrollierte bewegungen \n" +
-                    "Erbrechen \n" +
-                    "Filmriss ist vorprogrammiert \n" +
-                    "LEBENSGEFAHR vorallen bei Jugendlichen"+
+                    "- unkontrollierte bewegungen \n" +
+                    "- Erbrechen \n" +
+                    "- Filmriss ist vorprogrammiert \n" +
+                    "- LEBENSGEFAHR vorallen bei Jugendlichen"+
                     "\n"+
                     "\n" +
-                    "ab 3,0‰: \n" +
-                    "LEBENSGEFAHR \n" +
-                    "Bewusstlosigkeit \n" +
-                    "Gefahren durch schwache Atmung"
+                    "- ab 3,0‰: \n" +
+                    "- LEBENSGEFAHR \n" +
+                    "- Bewusstlosigkeit \n" +
+                    "- Gefahren durch schwache Atmung"
         )
         //Aktion wenn auf Okay geklickt wurde
         builder.setPositiveButton("Ok") { _, _ ->

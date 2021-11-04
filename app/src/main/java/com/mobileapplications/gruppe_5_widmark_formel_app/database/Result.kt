@@ -3,7 +3,7 @@ package com.mobileapplications.gruppe_5_widmark_formel_app.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+//Aufbau der Datenbank
 @Entity(tableName = "result_table")
 data class Result(
     @PrimaryKey(autoGenerate = true)

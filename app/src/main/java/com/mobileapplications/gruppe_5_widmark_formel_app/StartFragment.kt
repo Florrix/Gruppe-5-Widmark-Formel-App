@@ -19,7 +19,9 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
-
+    // Erstellung einer Map mit den ganzen getränken die man Auswählen kann
+        //jedem getränl wird dann einem Wert zugewisesen
+        //dieser Wert gibt an, wie viel ml reiner Alkohol in dem getränk drin ist
         val alcoholMapping = mapOf(
             "Flasche Bier (0.33 l, 4,8 Vol.-%)" to 15.84,
             "Flasche Bier (0.5l, 4,8 Vol.-%)" to 24,
@@ -38,8 +40,11 @@ class StartFragment : Fragment() {
 
         //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezeigt
         binding.buttonCalculate.setOnClickListener { view: View ->
+            //die Variable ruft eine Methode auf, die dann auswählt welches Geschlecht geklickt wurde
             val genderStr =
                 decideGender() //TODO "it" als Paramter. Hatte irgendwie nicht funktioniert
+            //Angabe welcher Verteilungswert der Alkhol im körper hat
+            // es wird dabei unterschieden, wenn man den radiobutton "weiblich" oder "männlcih" ausgewählt hat
             val genderFactor = when (genderStr) {
                 "weiblich" -> {
                     "0.6"
@@ -51,32 +56,45 @@ class StartFragment : Fragment() {
                     "0"
                 }
             }
+            //setzten der Variablen, die in den Eingabefeldern nach Einagbe sind
             val weight = binding.textWeightInput.text.toString()
             val duration = binding.textDurationInput.text.toString()
             val quantity = binding.spinnerAlcoholQuantity.selectedItem.toString()
+            //die pure Alkoholmenge von jedem getränk wird bestimmt
+            //dabei wird geschaut,welches getränk aus der Map bzw. dem dazugehörigen Spinner gewählt wurde
+            //der Wert zu dem dann gemappt wurde, wird dann noch von ml in g umgewandelt
+            // (da Alkohol eine Dichte von  0,79 g/cm^3) wird dann noch *0,79 gerechnet
             val pureAlcoholPerDrink =
                 alcoholMapping.get(binding.spinnerAlcoholtype.selectedItem).toString()
                     .toDouble() * 0.79
-
+            //es soll geschaut werden, ob alle Inhalte eingegeben wurden
             if (weight.isNullOrEmpty()
                 || duration.isNullOrEmpty()
                 || quantity.isNullOrEmpty()
                 || genderStr.equals("")
             ) {
+                //wenn noch nicht alles ausgefült ist, dann wird eine Meldung angezeigt
                 Toast.makeText(
                     activity,
                     "Please check your input again and only enter valid data!",
                     Toast.LENGTH_SHORT
                 ).show();
             } else {
+                //wenn alles eingegegeben wurde, dann berehnet es den Promillegehelt
+                    //Alkohol für die Anzahl der getrunkenene Getränke, Anzahl des Getränks * die pure Menge Alkohol pro Getränk
                 val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
+                //genaue Berechnungd er promille
+                //pureAlkoholmenge die man aufgenommen hat / (Verteilungsfaktor abhängig vom Geschlecht * Gewicht)
+                // - Abbau des Körpers von 0,15 Promille pro Stunde
                 var promille = BigDecimal(
                     (totalPureAlcohol / (genderFactor.toDouble() * weight.toDouble()) - 0.15 * duration.toDouble())
-                )
+                )//dann auf 2 Stellen runden
                     .setScale(2, RoundingMode.HALF_EVEN)
+                //wenn der Alkoholwert kleiner 0 ist, gibt es 0 aus, so kann kein negativer Promillewert angezeigt werden
                 if(promille < BigDecimal(0)){
                     promille = BigDecimal(0)
                 }
+                //dann navigiert es zum ResultFragment und gibt dort die Werte und den Promillewert aus
                 view.findNavController()
                     .navigate(
                         StartFragmentDirections.startToResult(

@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
+//welche Operationen kann man auf der Datenbank machen
 @Dao
 interface ResultDao {
     @Query("SELECT * FROM result_table ORDER BY id DESC")
