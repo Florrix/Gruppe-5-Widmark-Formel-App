@@ -21,10 +21,19 @@ class ResultFragment : Fragment() {
                 view: View ->
             view.findNavController().navigate(R.id.resultToStart)
         }
-        //kommt noch weg wenn Menu funktioniert
-        /*binding.helpButton.setOnClickListener{
-                view: View -> view.findNavController().navigate(R.id.resultToHelp)
-        }*/
+
+        binding.helpButton.setOnClickListener{
+            view: View -> view.findNavController().navigate(R.id.resultToHelp)
+        }
+
+        val args = ResultFragmentArgs.fromBundle((requireArguments()))
+        binding.resultWeight.text = args.weight
+        binding.resultHeight.text = args.height
+        binding.resultGender.text = args.gender
+        binding.resultDuration.text = args.duration
+        binding.totalSumAlcohol.text = args.totalPureAlcohol
+        binding.result.text = args.promille
+
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)
         return binding.root

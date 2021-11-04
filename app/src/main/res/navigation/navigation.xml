@@ -34,6 +34,24 @@
         <action
             android:id="@+id/resultToAll"
             app:destination="@id/dataFragment" />
+        <argument
+            android:name="weight"
+            app:argType="string" />
+        <argument
+            android:name="height"
+            app:argType="string" />
+        <argument
+            android:name="gender"
+            app:argType="string" />
+        <argument
+            android:name="duration"
+            app:argType="string" />
+        <argument
+            android:name="promille"
+            app:argType="string" />
+        <argument
+            android:name="totalPureAlcohol"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"

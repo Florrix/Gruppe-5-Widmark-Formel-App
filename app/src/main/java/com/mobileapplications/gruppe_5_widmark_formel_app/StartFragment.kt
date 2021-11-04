@@ -25,10 +25,46 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
+
+        val alcoholMapping = mapOf(
+            "Flasche Bier (0.33 l, 4,8 Vol.-%)" to 15.84,
+            "Flasche Bier (0.5l, 4,8 Vol.-%)" to 24,
+            "Glas Bier (0.2 l, 4,8 Vol.-%)" to 9.6,
+            "Glas Bier (0.4l, 4,8 Vol.-%)" to 19.2,
+            "Flasche Rotwein (0.75 l, 12.5 Vol.-%)" to 93.75,
+            "Glas Rotweinein(0.2 l, 12.5 Vol.-%)" to 25,
+            "Flasche Weißwein (0.75l, 11.5 Vol.-%)" to 86.25,
+            "Glas Weißweinein(0.2 l, 11.5 Vol.-%)" to 23,
+            "Flasche Sekt (0.75l, 12.5 Vol.-%)" to 93.75,
+            "Glas Sekt(0.2 l, 12.5 Vol.-%)" to 25,
+            "Cocktail (0.4l, 0.15 Vol.-%)" to 60,
+            "Shot (4 cl, 0.4 Vol.-%)" to 16,
+            "Shot (6 cl, 0.4 Vol.-%)" to 24,
+        )
+
         //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezeigt
         binding.buttonCalculate.setOnClickListener { view: View ->
-
-            view.findNavController().navigate(R.id.startToResult)
+            val genderStr =
+                decideGender() //TODO "it" als Paramter. Hatte irgendwie nicht funktioniert
+            val weight = binding.textWeightInput.text
+            val height = binding.textHeightInput.text
+            val duration = binding.textDurationInput.text
+            val quantity = binding.spinnerAlcoholQuantity.selectedItem.toString()
+            val pureAlcoholPerDrink =
+                alcoholMapping.get(binding.spinnerAlcoholtype.selectedItem).toString()
+            val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
+            val promille = 1
+            view.findNavController()
+                .navigate(
+                    StartFragmentDirections.startToResult(
+                        weight.toString(),
+                        height.toString(),
+                        genderStr,
+                        duration.toString(),
+                        promille.toString(),
+                        totalPureAlcohol.toString()
+                    )
+                )
         }
 
         //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
@@ -62,6 +98,20 @@ class StartFragment : Fragment() {
         return binding.root
     }
 
+    //Hier wird je nach Auswahl der Radiobuttons festgelegt ob "männlich" oder "weiblich" ausgewählt wurde
+    private fun decideGender(): String {
+        when (binding.genderRadioGroup.checkedRadioButtonId) {
+            R.id.genderRadioW -> {
+                return "weiblich"
+            }
+            R.id.genderRadioM -> {
+                return "männlich"
+            }
+        }
+        return ""
+    }
+
+
     //Wenn man auf die Menüleiste klickt, sollte die zuvor in der options_menu.xml erstellten Liste angezeigt werden
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -71,14 +121,14 @@ class StartFragment : Fragment() {
     //wenn auf ein bestimmtes Element geklickt werden, soll mit Hilfe des Navigationspfad auf die zugehörige Seite verwiesen werden
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
-        return when(item.itemId){
+        return when (item.itemId) {
             //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
-                //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
-            R.id.menuHelp-> {
+            //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
+            R.id.menuHelp -> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToHelp)
                     true
-                } catch (ex:Exception) {
+                } catch (ex: Exception) {
                     false
                 }
 
@@ -94,11 +144,11 @@ class StartFragment : Fragment() {
 
             }*/
 
-            R.id.menuAll-> {
+            R.id.menuAll -> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToAll)
                     true
-                } catch (ex:Exception) {
+                } catch (ex: Exception) {
                     false
                 }
 

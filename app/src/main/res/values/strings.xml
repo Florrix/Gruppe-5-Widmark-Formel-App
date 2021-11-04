@@ -15,21 +15,19 @@
     <string name="textAlcohol">Menge des Alkoholkonsums:</string>
     <string name="textAlcoholtype">Art:</string>
     <string-array name="spinnerAlcoholtype">
-        <item>Flasche Bier (0.33 l, 4,8 Vol.-%</item>
-        <item>Flasche Bier (0.5l, 4,8 Vol.-%</item>
-        <item>Glas Bier (0.2 l, 4,8 Vol.-%</item>
-        <item>Glas Bier (0.4l, 4,8 Vol.-%</item>
-        <item>Flasche Rotwein (0.75 l, 12.5 Vol.-%</item>
+        <item>Flasche Bier (0.33 l, 4,8 Vol.-%)</item>
+        <item>Flasche Bier (0.5l, 4,8 Vol.-%)</item>
+        <item>Glas Bier (0.2 l, 4,8 Vol.-%)</item>
+        <item>Glas Bier (0.4l, 4,8 Vol.-%)</item>
+        <item>Flasche Rotwein (0.75 l, 12.5 Vol.-%)</item>
         <item>Glas Rotweinein(0.2 l, 12.5 Vol.-%)</item>
-        <item>Flasche Weißwein (0.75l, 11.5 Vol.-% </item>
+        <item>Flasche Weißwein (0.75l, 11.5 Vol.-%)</item>
         <item>Glas Weißweinein(0.2 l, 11.5 Vol.-%)</item>
-        <item>Flasche Sekt (0.75l, 12.5 Vol.-%</item>
+        <item>Flasche Sekt (0.75l, 12.5 Vol.-%)</item>
         <item>Glas Sekt(0.2 l, 12.5 Vol.-%)</item>
-        <item>Longdrink (2 cl, 0.4 l)</item>
-        <item>Longdrink Shot (4 cl, 0.4 l)</item>
-        <item>Longdrink Shot (6 cl, 0.4 l)</item>
-        <item>einfacher Shot (2 cl, 35 Vol.-%)</item>
-        <item>doppleter Shot (4 cl, Vol.-%)</item>
+        <item>Cocktail (0.4l, 0.15 Vol.-%)</item>
+        <item>Shot (4 cl, 0.4 Vol.-%)</item>
+        <item>Shot (6 cl, 0.4 Vol.-%)</item>
     </string-array>
     <string name="textAlcoholQuantity">Anzahl:</string>
     <string-array name="spinnerAlcoholQuantity">

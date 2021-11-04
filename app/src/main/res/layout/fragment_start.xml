@@ -134,6 +134,7 @@
                 sich in einer RadioGropu, damit es möglich ist nur eins der
                 beiden auszuwählen-->
             <RadioGroup
+                android:id="@+id/genderRadioGroup"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
@@ -141,7 +142,7 @@
                     auch hier wurde ein Sytle verwendet-->
 
                 <RadioButton
-                    android:id="@+id/gernderRadioM"
+                    android:id="@+id/genderRadioM"
                     style="@style/radioGender"
                     android:text="@string/genderRadioM" />
 
