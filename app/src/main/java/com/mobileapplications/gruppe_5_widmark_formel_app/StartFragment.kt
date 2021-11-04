@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.text.isDigitsOnly
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -17,6 +18,8 @@ import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultReposit
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
 import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModel
 import com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModelFactory
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class StartFragment : Fragment() {
     private lateinit var binding: FragmentStartBinding
@@ -46,25 +49,54 @@ class StartFragment : Fragment() {
         binding.buttonCalculate.setOnClickListener { view: View ->
             val genderStr =
                 decideGender() //TODO "it" als Paramter. Hatte irgendwie nicht funktioniert
-            val weight = binding.textWeightInput.text
+            val genderFactor = when (genderStr) {
+                "weiblich" -> {
+                    "0.6"
+                }
+                "männlich" -> {
+                    "0.7"
+                }
+                else -> {
+                    "0"
+                }
+            }
+            val weight = binding.textWeightInput.text.toString()
             val height = binding.textHeightInput.text
             val duration = binding.textDurationInput.text
             val quantity = binding.spinnerAlcoholQuantity.selectedItem.toString()
             val pureAlcoholPerDrink =
                 alcoholMapping.get(binding.spinnerAlcoholtype.selectedItem).toString()
-            val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
-            val promille = 1
-            view.findNavController()
-                .navigate(
-                    StartFragmentDirections.startToResult(
-                        weight.toString(),
-                        height.toString(),
-                        genderStr,
-                        duration.toString(),
-                        promille.toString(),
-                        totalPureAlcohol.toString()
+
+            if (weight.isNullOrEmpty()
+                || height.isNullOrEmpty()
+                || duration.isNullOrEmpty()
+                || quantity.isNullOrEmpty()
+                || pureAlcoholPerDrink.isNullOrEmpty()
+                || genderStr.equals("")
+            ) {
+                Toast.makeText(
+                    activity,
+                    "Please check your input again and only enter valid data!",
+                    Toast.LENGTH_SHORT
+                ).show();
+            } else {
+                val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
+                val promille =
+                    BigDecimal(totalPureAlcohol / (genderFactor.toDouble() * weight.toDouble()))
+                        .setScale(2, RoundingMode.HALF_EVEN)
+
+                view.findNavController()
+                    .navigate(
+                        StartFragmentDirections.startToResult(
+                            weight.toString(),
+                            height.toString(),
+                            genderStr,
+                            duration.toString(),
+                            promille.toString(),
+                            totalPureAlcohol.toString()
+                        )
                     )
-                )
+            }
         }
 
         //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden

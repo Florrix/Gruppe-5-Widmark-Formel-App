@@ -32,7 +32,7 @@ class ResultFragment : Fragment() {
         binding.resultGender.text = args.gender
         binding.resultDuration.text = args.duration
         binding.totalSumAlcohol.text = args.totalPureAlcohol
-        binding.result.text = args.promille
+        binding.result.text = args.promille + "‰"
 
         //Anzeigen der Menüleiste
         setHasOptionsMenu(true)

@@ -53,7 +53,8 @@
                 style="@style/InputStyleValue"
                 android:maxLength="3"
                 android:text=""
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"
+                android:inputType="number"/>
 
             <TextView
                 android:id="@+id/WeightView"
@@ -98,7 +99,8 @@
                 style="@style/InputStyleValue"
                 android:maxLength="3"
                 tools:ignore="SpeakableTextPresentCheck"
-                android:text=""/>
+                android:text=""
+                android:inputType="number"/>
             <TextView
                 android:id="@+id/HeightView"
                 style="@style/textUnit"
@@ -169,7 +171,8 @@
                 style="@style/InputStyleValue"
                 android:maxLength="4"
                 tools:ignore="SpeakableTextPresentCheck"
-                android:text=""/>
+                android:text=""
+                android:inputType="number"/>
             <TextView
                 android:id="@+id/DurationView"
                 style="@style/textUnit"
