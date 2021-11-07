@@ -85,6 +85,8 @@ class StartFragment : Fragment() {
                 || duration.isNullOrEmpty()
                 || quantity.isNullOrEmpty()
                 || genderStr.equals("")
+                || quantity.isNullOrEmpty()
+                || pureAlcoholPerDrink == 0.0
             ) {
                 //wenn noch nicht alles ausgefült ist, dann wird eine Meldung angezeigt
                 Toast.makeText(

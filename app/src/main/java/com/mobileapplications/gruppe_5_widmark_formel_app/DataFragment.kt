@@ -35,7 +35,7 @@ class DataFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val adapter = ResultAdapter()
-        binding.resultList.layoutManager = LinearLayoutManager(requireContext())
+        binding.resultList.layoutManager = LinearLayoutManager(activity)
         binding.resultList.adapter = adapter
 
         dataFragmentViewmodel.results.observe(viewLifecycleOwner, Observer {
@@ -63,8 +63,8 @@ class DataFragment : Fragment() {
                 } catch (ex:Exception) {
                     false
                 }
-
             }
+
             //das gleiche gilt wenn das Item für alle ergebnisse geklickt wird ausgeführt
             R.id.menuStart-> {
                 try {

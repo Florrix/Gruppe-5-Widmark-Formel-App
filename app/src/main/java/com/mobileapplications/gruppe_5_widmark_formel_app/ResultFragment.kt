@@ -25,7 +25,7 @@ class ResultFragment : Fragment() {
         binding.helpButton.setOnClickListener{
             view: View -> view.findNavController().navigate(R.id.resultToHelp)
         }
-        //Argumente die durch die Berechnung und der Eingabe der Werte aus dem StartFragemnet kommen
+        //Argumente die durch die Berechnung und der Eingabe der Werte aus dem StartFragment kommen
         val args = ResultFragmentArgs.fromBundle((requireArguments()))
         binding.resultWeight.text = args.weight
         binding.resultGender.text = args.gender
@@ -70,7 +70,7 @@ class ResultFragment : Fragment() {
 
             R.id.menuData-> {
                 try {
-                    view?.findNavController()?.navigate(R.id.startToData)
+                    view?.findNavController()?.navigate(R.id.resultToData)
                     true
                 } catch (ex:Exception) {
                     false
