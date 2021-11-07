@@ -7,8 +7,13 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultDatabase
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.FragmentStartBinding
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.MainActivityViewModel
+import com.mobileapplications.gruppe_5_widmark_formel_app.model.MainActivityViewModelFactory
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -37,6 +42,14 @@ class StartFragment : Fragment() {
             "Shot (4 cl, 0.4 Vol.-%)" to 16,
             "Shot (6 cl, 0.4 Vol.-%)" to 24,
         )
+
+        val database = ResultDatabase.getInstance(requireContext())
+        val noteRepository = ResultRepository(database.resultDao)
+        val viewModelFactory = MainActivityViewModelFactory(noteRepository)
+        val mainActivityViewModel = ViewModelProvider(
+            this,
+            viewModelFactory
+        ).get(MainActivityViewModel::class.java)
 
         //Wenn auf den Button berechnen geklickt wird, dann wird die Seite des Ergbenisses angezeigt
         binding.buttonCalculate.setOnClickListener { view: View ->
@@ -82,7 +95,7 @@ class StartFragment : Fragment() {
             } else {
                 //wenn alles eingegegeben wurde, dann berehnet es den Promillegehelt
                     //Alkohol für die Anzahl der getrunkenene Getränke, Anzahl des Getränks * die pure Menge Alkohol pro Getränk
-                val totalPureAlcohol = quantity.toDouble() + pureAlcoholPerDrink.toDouble()
+                val totalPureAlcohol = quantity.toDouble() * pureAlcoholPerDrink
                 //genaue Berechnungd er promille
                 //pureAlkoholmenge die man aufgenommen hat / (Verteilungsfaktor abhängig vom Geschlecht * Gewicht)
                 // - Abbau des Körpers von 0,15 Promille pro Stunde
@@ -94,6 +107,15 @@ class StartFragment : Fragment() {
                 if(promille < BigDecimal(0)){
                     promille = BigDecimal(0)
                 }
+
+                mainActivityViewModel.resultPromille = promille.toString()
+                mainActivityViewModel.resultWeight = weight
+                mainActivityViewModel.resultGender = genderStr
+                mainActivityViewModel.resultDuration = duration
+                mainActivityViewModel.resultQuantity = totalPureAlcohol.toString()
+
+                mainActivityViewModel.insert()
+
                 //dann navigiert es zum ResultFragment und gibt dort die Werte und den Promillewert aus
                 view.findNavController()
                     .navigate(

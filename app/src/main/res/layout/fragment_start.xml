@@ -5,11 +5,6 @@
     tools:context=".StartFragment">
     <!--festlegen des gesamten Layouts der Startseite   -->
 
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="viewModel"-->
-<!--            type="com.mobileapplications.gruppe_5_widmark_formel_app.model.DataFragmentViewModel" />-->
-<!--    </data>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -190,7 +185,7 @@
                 android:id="@+id/spinnerAlcoholtype"
                 style="@style/spinnerAlcohol"
                 android:text=""
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="@dimen/marginEnd"
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>

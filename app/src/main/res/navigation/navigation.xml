@@ -31,9 +31,6 @@
         <action
             android:id="@+id/resultToStart"
             app:destination="@id/startFragment" />
-        <action
-            android:id="@+id/resultToData"
-            app:destination="@id/dataFragment" />
         <argument
             android:name="weight"
             app:argType="string" />
@@ -49,6 +46,9 @@
         <argument
             android:name="totalPureAlcohol"
             app:argType="string" />
+        <action
+            android:id="@+id/resultToData"
+            app:destination="@id/dataFragment" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
@@ -65,9 +65,16 @@
             android:id="@+id/helpToData"
             app:destination="@id/dataFragment" />
     </fragment>
-    <activity
+    <fragment
         android:id="@+id/dataFragment"
         android:name="com.mobileapplications.gruppe_5_widmark_formel_app.DataFragment"
         android:label="fragment_data"
-        tools:layout="@layout/fragment_data" />
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/dataToStart"
+            app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/dataToHelp"
+            app:destination="@id/helpFragment" />
+    </fragment>
 </navigation>

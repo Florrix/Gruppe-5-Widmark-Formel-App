@@ -6,9 +6,12 @@ import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.ResultRepository
 import kotlinx.coroutines.launch
 
-class DataFragmentViewModel(
+class MainActivityViewModel(
     private val repository: ResultRepository
 ) : ViewModel() {
+
+    val results = repository.allResults
+
     var resultPromille = ""
     var resultWeight = ""
     var resultGender = ""

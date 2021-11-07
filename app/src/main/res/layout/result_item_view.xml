@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="resultEntity"
+            type="com.mobileapplications.gruppe_5_widmark_formel_app.database.Result" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/result_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/result_item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@{resultEntity.id}"
+            android:textSize="@dimen/headlineTextSize" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textStyleInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/marginEnd"
+            android:layout_weight="1"
+            android:text="@{resultEntity.promille}" />
+
+        <TextView
+            style="@style/textStyleInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+            android:text="@string/promille" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginEnd"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dataWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resultEntity.weight}" />
+
+            <TextView
+                android:id="@+id/dataGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resultEntity.gender}" />
+
+            <TextView
+                android:id="@+id/dataDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resultEntity.duration}" />
+
+            <TextView
+                android:id="@+id/dataQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resultEntity.quantity}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/marginEnd"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/unitWeight" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textDurationUnit" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textTotalSumAlcoholUnit" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

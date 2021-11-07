@@ -21,7 +21,7 @@ data class Result(
     @ColumnInfo(name = "duration")
     val duration: String,
 
-    @ColumnInfo(name = "type")
-    val type: String
+    @ColumnInfo(name = "quantity")
+    val quantity: String
 )
 
