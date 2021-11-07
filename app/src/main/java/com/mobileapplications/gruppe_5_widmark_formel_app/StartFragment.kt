@@ -146,7 +146,7 @@ class StartFragment : Fragment() {
         }
 
         //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
-        //Dafür wird das String-aray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
+        //Dafür wird das String-array in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
         val spinnerAQuantity: Spinner = binding.spinnerAlcoholtype
         ArrayAdapter.createFromResource(
             requireContext(),
@@ -187,7 +187,7 @@ class StartFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
         return when (item.itemId) {
-            //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
+            //wenn das Hilfe-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad startToHelp ausgeführt
             //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
             R.id.menuHelp -> {
                 try {
@@ -198,16 +198,6 @@ class StartFragment : Fragment() {
                 }
 
             }
-            //das gleiche gilt wenn das Item Start geklickt wird und somit die passende Navigation ausgeführt wird
-            /*R.id.menuStart -> {
-                try {
-                    view?.findNavController()?.navigate(R.id.startToResult)
-                    true
-                } catch (ex:Exception) {
-                    false
-                }
-
-            }*/
 
             R.id.menuData -> {
                 try {
