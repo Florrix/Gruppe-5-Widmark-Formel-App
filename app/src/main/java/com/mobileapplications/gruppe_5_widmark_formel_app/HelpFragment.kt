@@ -56,7 +56,7 @@ class HelpFragment : Fragment() {
             //das gleiche gilt für das alle Ergebnisse Item
             R.id.menuData-> {
                 try {
-                    view?.findNavController()?.navigate(R.id.startToData)
+                    view?.findNavController()?.navigate(R.id.helpToData)
                     true
                 } catch (ex:Exception) {
                     false

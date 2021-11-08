@@ -116,10 +116,6 @@
             android:id="@+id/buttonNewCalculate"
             style="@style/buttonGreen"
             android:text="@string/buttonNewCalculation" />
-        <Button
-            android:id="@+id/helpButton"
-            style="@style/buttonGreen"
-            android:text="Hilfe" />
 
     </LinearLayout>
 </layout>
