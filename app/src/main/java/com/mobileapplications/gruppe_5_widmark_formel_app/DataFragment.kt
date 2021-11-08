@@ -22,7 +22,7 @@ class DataFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_data, container, false)
 
-        val database = ResultDatabase.getInstance(requireContext())
+        val database = ResultDatabase.getInstance(requireActivity())
         val resultRepository = ResultRepository(database.resultDao)
         val viewModelFactory = MainActivityViewModelFactory(resultRepository)
         val dataFragmentViewmodel = ViewModelProvider(
@@ -35,10 +35,10 @@ class DataFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val adapter = ResultAdapter()
-        binding.resultList.layoutManager = LinearLayoutManager(activity)
+        binding.resultList.layoutManager = LinearLayoutManager(requireActivity())
         binding.resultList.adapter = adapter
 
-        dataFragmentViewmodel.results.observe(viewLifecycleOwner, Observer {
+        dataFragmentViewmodel.results.observe(requireActivity(), Observer {
             adapter.submitList(it)
         })
 

@@ -43,7 +43,7 @@ class StartFragment : Fragment() {
             "Shot (6 cl, 0.4 Vol.-%)" to 24,
         )
 
-        val database = ResultDatabase.getInstance(requireContext())
+        val database = ResultDatabase.getInstance(requireActivity())
         val noteRepository = ResultRepository(database.resultDao)
         val viewModelFactory = MainActivityViewModelFactory(noteRepository)
         val mainActivityViewModel = ViewModelProvider(

@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.ResultItemViewBinding
+import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
+
 
 class ResultAdapter : ListAdapter<Result, ResultAdapter.ViewHolder>(ResultDiffCallback()) {
     class ViewHolder private constructor(val binding: ResultItemViewBinding) :

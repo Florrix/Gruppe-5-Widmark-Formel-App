@@ -16,11 +16,6 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/textSize"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/testText"
-            android:text="test"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/resultList"

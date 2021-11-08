@@ -20,8 +20,8 @@
             android:layout_gravity="top"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:text="@{resultEntity.id}"
-            android:textSize="@dimen/headlineTextSize" />
+            android:text="@{Integer.toString(resultEntity.id)}"
+            android:textSize="@dimen/textSize" />
 
         <TextView
             android:id="@+id/textView"
