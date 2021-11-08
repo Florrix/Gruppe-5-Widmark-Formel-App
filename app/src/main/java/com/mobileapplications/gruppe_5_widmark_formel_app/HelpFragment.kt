@@ -42,18 +42,8 @@ class HelpFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         //es wird mit Hilfe der Id geschaut welches Item ausgewählt wird
         return when(item.itemId){
-            //wenn das Hile-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad toHelpFragment ausgeführt
+            //wenn das Start-item ausgewählt wird, wird versucht mit Hilfe des Navigationspfad helpToStart ausgeführt
             //wenn der das nicht klappt, gibt die Methode false zurück, damit die App nicht abstürtzt
-            /*R.id.menuHelp-> {
-                try {
-                    view?.findNavController()?.navigate(R.id.helpToResult)
-                    true
-                } catch (ex:Exception) {
-                    false
-                }
-
-            }*/
-            //das gleiche gilt wenn das Item für alle ergebnisse geklickt wird ausgeführt
             R.id.menuStart-> {
                 try {
                     view?.findNavController()?.navigate(R.id.helpToStart)
@@ -63,7 +53,7 @@ class HelpFragment : Fragment() {
                 }
 
             }
-
+            //das gleiche gilt für das alle Ergebnisse Item
             R.id.menuData-> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToData)
@@ -114,14 +104,10 @@ class HelpFragment : Fragment() {
         builder.setMessage(
                     "Gewicht: \n - Angabe des Körpergewichts in kg \n " +
                     "- Dabei gibst du die Zahl ein, die bei dir auf der Waage steht \n" +
-                    "Zulässig ist dabei hier alles von 40-300kg. \n" +
-                            "\n"+
-                    "Größe: \n - die Größe wird in cm angegeben \n - Das heißt, wenn du z.B. 1,55m groß bist, gibst du 155 cm ein. \n" +
-                    "- dabei sind alle werte zulässig von 130(1,30m) und 220(2,20m)\n" +
                             "\n"+
                     "Geschlecht: \n - wir unterscheiden hier zwischen männlich und weiblich, da die Berechnung derzeit nur dafür ausgelegt ist\n" +
                             "\n"+
-                    "Dauer: \n - die Angabe ist in Std., dass heißt wenn du 30 mi Alkohol getrunken hast, gibst du 0,5 h ein\n" +
+                    "Dauer: \n - die Angabe ist in Std., dass heißt wenn du 1 Stunde Alkohol getrunken hast, gibst du 1 h ein\n" +
                             "\n"+
                     "Menge: \n - du hast die Auswahl zwischen verschiedenen gängigen Alkoholtypen, die voreingestellten Vol. Werte orientieren sich an den typischen Werten.\n"
         )
@@ -145,7 +131,7 @@ class HelpFragment : Fragment() {
                     "- man macht erste Fehler" +
                     "\n" +
                     "\n" +
-                    "0,3‰ - 0,5‰:" +
+                    "0,3‰ - 0,5‰: \n" +
                     "- verlangsamte Reaktion und Aufmerksamkeit \n" +
                     "- Risikobereitschaft steigt \n" +
                     "- man kann weniger sehen und hören" +
@@ -173,7 +159,7 @@ class HelpFragment : Fragment() {
                     "- LEBENSGEFAHR vorallen bei Jugendlichen"+
                     "\n"+
                     "\n" +
-                    "- ab 3,0‰: \n" +
+                    "ab 3,0‰: \n" +
                     "- LEBENSGEFAHR \n" +
                     "- Bewusstlosigkeit \n" +
                     "- Gefahren durch schwache Atmung"

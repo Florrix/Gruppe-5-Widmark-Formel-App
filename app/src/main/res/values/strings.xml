@@ -49,8 +49,8 @@
     <string name="buttonNewCalculation">Neue Berechnung</string>
 
     <!--Texte für das Helpfragment-->
-    <string name="textInfoFormula">Informationen zur Berechnung des Promille-Gehalts:</string>
-    <string name="textAsk">F</string>
+    <string name="textInfoFormula">Widmarck-Formel:</string>
+    <string name="textAsk">!</string>
     <string name="textInfoValue">Welche Werte darf ich eingeben?</string>
     <string name="textInfoResult">Was bedeutet mein Promille-Wert?</string>
     <string name="menu_start">Start</string>
