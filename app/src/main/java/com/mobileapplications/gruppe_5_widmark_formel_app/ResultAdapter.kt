@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.ResultItemViewBinding
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
+import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.ResultItemViewBinding
 
 
-class ResultAdapter : ListAdapter<Result, ResultAdapter.ViewHolder>(ResultDiffCallback()) {
+class ResultAdapter(private val listener: (Result) -> Unit) :
+    ListAdapter<Result, ResultAdapter.ViewHolder>(ResultDiffCallback()) {
     class ViewHolder private constructor(val binding: ResultItemViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Result) {
@@ -32,6 +33,9 @@ class ResultAdapter : ListAdapter<Result, ResultAdapter.ViewHolder>(ResultDiffCa
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
+        holder.itemView.setOnClickListener {
+            listener(item)
+        }
     }
 }
 

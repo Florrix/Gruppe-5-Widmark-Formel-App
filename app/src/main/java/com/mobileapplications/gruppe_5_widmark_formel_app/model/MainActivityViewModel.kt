@@ -35,5 +35,9 @@ class MainActivityViewModel(
         repository.deleteAll()
     }
 
+    fun deleteResult(result: Result) = viewModelScope.launch {
+        repository.delete(result)
+    }
+
 }
 

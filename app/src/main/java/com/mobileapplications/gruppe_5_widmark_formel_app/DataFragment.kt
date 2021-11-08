@@ -34,13 +34,21 @@ class DataFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        val adapter = ResultAdapter()
+        val adapter = ResultAdapter(listener = {
+            dataFragmentViewmodel.deleteResult(it)
+        })
+
         binding.resultList.layoutManager = LinearLayoutManager(requireActivity())
         binding.resultList.adapter = adapter
 
         dataFragmentViewmodel.results.observe(requireActivity(), Observer {
             adapter.submitList(it)
         })
+
+        binding.deleteAllButton.setOnClickListener{
+            dataFragmentViewmodel.deleteAll()
+        }
+
 
         return binding.root
     }

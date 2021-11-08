@@ -6,4 +6,6 @@
     <dimen name="marginEnd">25dp</dimen>
     <dimen name="textFieldWidth">200dp</dimen>
     <dimen name="headlineTextSize">20dp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="betweenLinePadding">3dp</dimen>
 </resources>
