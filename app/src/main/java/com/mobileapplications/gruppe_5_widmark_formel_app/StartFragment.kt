@@ -25,8 +25,8 @@ class StartFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
     // Erstellung einer Map mit den ganzen getränken die man Auswählen kann
-        //jedem getränl wird dann einem Wert zugewisesen
-        //dieser Wert gibt an, wie viel ml reiner Alkohol in dem getränk drin ist
+        //jedem Getränk wird dann einem Wert zugewisesen
+        //dieser Wert gibt an, wie viel ml reiner Alkohol in dem Getränk drin ist
         val alcoholMapping = mapOf(
             "Flasche Bier (0.33 l, 4,8 Vol.-%)" to 15.84,
             "Flasche Bier (0.5l, 4,8 Vol.-%)" to 24,
@@ -43,6 +43,7 @@ class StartFragment : Fragment() {
             "Shot (6 cl, 0.4 Vol.-%)" to 24,
         )
 
+        //Erstellung des ViewModel
         val database = ResultDatabase.getInstance(requireActivity())
         val noteRepository = ResultRepository(database.resultDao)
         val viewModelFactory = MainActivityViewModelFactory(noteRepository)
@@ -110,12 +111,15 @@ class StartFragment : Fragment() {
                     promille = BigDecimal(0)
                 }
 
+                //setzen der Werte in die ViewModel
                 mainActivityViewModel.resultPromille = promille.toString()
                 mainActivityViewModel.resultWeight = weight
                 mainActivityViewModel.resultGender = genderStr
                 mainActivityViewModel.resultDuration = duration
                 mainActivityViewModel.resultQuantity = totalPureAlcohol.toString()
 
+                //führt die Methode insert im ViewModel auf, diese fügt die Werte später in das Repository ein,
+                // womit die Daten auch später in die DB gespeichert weden können
                 mainActivityViewModel.insert()
 
                 //dann navigiert es zum ResultFragment und gibt dort die Werte und den Promillewert aus
@@ -132,8 +136,8 @@ class StartFragment : Fragment() {
             }
         }
 
-        //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
-        //Dafür wird das String-aray in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
+        //das String-array was in dem Spinner sich befindet, muss durch die folgende Methode ausgeführt und angezeigt werden
+        //Dafür wird das String-array in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
         val spinnerAtype: Spinner = binding.spinnerAlcoholQuantity
         ArrayAdapter.createFromResource(
             requireContext(),
@@ -145,7 +149,7 @@ class StartFragment : Fragment() {
             spinnerAtype.adapter = adapter
         }
 
-        //das String-array was in dem Spinner sich befindet, muss druch die folgende Methode ausgeführt und angezeigt werden
+        //das String-array was in dem Spinner sich befindet, muss durch die folgende Methode ausgeführt und angezeigt werden
         //Dafür wird das String-array in einen Arrayadpater gepackt, und wenn man nun den Spinner auswählt öffnet sich das Array und wird angezeigt
         val spinnerAQuantity: Spinner = binding.spinnerAlcoholtype
         ArrayAdapter.createFromResource(
@@ -198,7 +202,7 @@ class StartFragment : Fragment() {
                 }
 
             }
-
+            //wenn "alle Ergebnisse" in dem Menu geklickt wird, soll das DataFragment geöffnet werden
             R.id.menuData -> {
                 try {
                     view?.findNavController()?.navigate(R.id.startToData)

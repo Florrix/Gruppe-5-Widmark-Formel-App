@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mobileapplications.gruppe_5_widmark_formel_app.database.Result
 import com.mobileapplications.gruppe_5_widmark_formel_app.databinding.ResultItemViewBinding
 
-
+//benötigter Adapter für die Erstzellung eines Recycler-Views
 class ResultAdapter(private val listener: (Result) -> Unit) :
     ListAdapter<Result, ResultAdapter.ViewHolder>(ResultDiffCallback()) {
     class ViewHolder private constructor(val binding: ResultItemViewBinding) :

@@ -22,6 +22,7 @@ class DataFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_data, container, false)
 
+        //Verbindung zum ViewModel aufbauen
         val database = ResultDatabase.getInstance(requireActivity())
         val resultRepository = ResultRepository(database.resultDao)
         val viewModelFactory = MainActivityViewModelFactory(resultRepository)
@@ -32,19 +33,19 @@ class DataFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+        // Erstellung einer RecyclerViews mit Hilfe eines Adapters
         binding.lifecycleOwner = this
-
         val adapter = ResultAdapter(listener = {
             dataFragmentViewmodel.deleteResult(it)
         })
-
         binding.resultList.layoutManager = LinearLayoutManager(requireActivity())
         binding.resultList.adapter = adapter
-
         dataFragmentViewmodel.results.observe(requireActivity(), Observer {
             adapter.submitList(it)
         })
 
+        //Wenn der Button "alles Löschen" geklickt wird, sollen alle Ergebnisse gelöscht werden,
+        //deswegen wird dann die Methode deletaAll() aufgerufen
         binding.deleteAllButton.setOnClickListener{
             dataFragmentViewmodel.deleteAll()
         }

@@ -17,7 +17,7 @@ class MainActivityViewModel(
     var resultGender = ""
     var resultDuration = ""
     var resultQuantity = ""
-
+    //Einfüge-Methode der Werte in das Datenbank-Repository
     fun insert() = viewModelScope.launch {
         repository.insert(
             Result(
@@ -30,11 +30,11 @@ class MainActivityViewModel(
             )
         )
     }
-
+    //Methode um alle Ergbenisse zu löschen
     fun deleteAll() = viewModelScope.launch {
         repository.deleteAll()
     }
-
+    //Methode um ein spezielles Ergbenis zu löschen
     fun deleteResult(result: Result) = viewModelScope.launch {
         repository.delete(result)
     }
