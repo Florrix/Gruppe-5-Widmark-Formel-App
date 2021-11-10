@@ -92,18 +92,18 @@ class StartFragment : Fragment() {
                 //wenn noch nicht alles ausgefült ist, dann wird eine Meldung angezeigt
                 Toast.makeText(
                     activity,
-                    "Please check your input again and only enter valid data!",
+                    "Bitte überprüfe alle Eingaben",
                     Toast.LENGTH_SHORT
                 ).show();
             } else {
                 //wenn alles eingegegeben wurde, dann berehnet es den Promillegehelt
                     //Alkohol für die Anzahl der getrunkenene Getränke, Anzahl des Getränks * die pure Menge Alkohol pro Getränk
-                val totalPureAlcohol = quantity.toDouble() * pureAlcoholPerDrink
+                var totalPureAlcohol = BigDecimal(quantity.toDouble() * pureAlcoholPerDrink).setScale(2, RoundingMode.HALF_EVEN)
                 //genaue Berechnungd er promille
                 //pureAlkoholmenge die man aufgenommen hat / (Verteilungsfaktor abhängig vom Geschlecht * Gewicht)
                 // - Abbau des Körpers von 0,15 Promille pro Stunde
                 var promille = BigDecimal(
-                    (totalPureAlcohol / (genderFactor.toDouble() * weight.toDouble()) - 0.15 * duration.toDouble())
+                    (totalPureAlcohol.toDouble() / (genderFactor.toDouble() * weight.toDouble()) - 0.15 * duration.toDouble())
                 )//dann auf 2 Stellen runden
                     .setScale(2, RoundingMode.HALF_EVEN)
                 //wenn der Alkoholwert kleiner 0 ist, gibt es 0 aus, so kann kein negativer Promillewert angezeigt werden
