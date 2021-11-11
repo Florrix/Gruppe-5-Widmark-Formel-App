@@ -72,23 +72,11 @@ class HelpFragment : Fragment() {
     private fun showInfoFormula(){
         val builder = AlertDialog.Builder(requireContext())
         //Titel des Dialogs
-        builder.setTitle("Widmarck-Formel")
+        builder.setTitle(getString(R.string.InfoTitleWidmarckFormel))
         //Inhalt des Fensters
-        builder.setMessage(
-            "- Formel vom schwedische Chemiker Erik M. P. Widmark \n" +
-                    "- dient zur Bestimmung der theoretischen maximalen Blutalkoholkonzentration" +
-                    "\n" +
-                    "\n"+
-                    "w = A / (m * r) \n" +
-                    "w = der Masseanteil des Alkohols im Körper in ‰ \n" +
-                    "A = die aufgenommene Masse des Alkohols in Gramm (g) \n" +
-                    "m = die Masse der Person in Kilogramm (kg) \n" +
-                    "r = der Reduktions- oder Verteilungsfaktor im Körper: \n" +
-                    "bei Männer liegt dieser Wert zwischen: 0,68–0,7 \n" +
-                    "und bei Frauen: 0,55–0,60"
-        )
+        builder.setMessage(R.string.InfoWidmarckText)
         //Aktion wenn auf Okay geklickt wurde
-        builder.setPositiveButton("Ok") { _, _ ->
+        builder.setPositiveButton(R.string.ok) { _, _ ->
         }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
@@ -99,20 +87,11 @@ class HelpFragment : Fragment() {
     private fun showInfoValue(){
         val builder = AlertDialog.Builder(requireContext())
         //Titel des Dialogs
-        builder.setTitle("gültige Werte")
+        builder.setTitle(R.string.InfoTitleAcceptedInputs)
         //Inhalt des Fensters
-        builder.setMessage(
-                    "Gewicht: \n - Angabe des Körpergewichts in kg \n " +
-                    "- Dabei gibst du die Zahl ein, die bei dir auf der Waage steht \n" +
-                            "\n"+
-                    "Geschlecht: \n - wir unterscheiden hier zwischen männlich und weiblich, da die Berechnung derzeit nur dafür ausgelegt ist\n" +
-                            "\n"+
-                    "Dauer: \n - die Angabe ist in Std., dass heißt wenn du 1 Stunde Alkohol getrunken hast, gibst du 1 h ein\n" +
-                            "\n"+
-                    "Menge: \n - du hast die Auswahl zwischen verschiedenen gängigen Alkoholtypen, die voreingestellten Vol. Werte orientieren sich an den typischen Werten.\n"
-        )
+        builder.setMessage(R.string.InfoInputsText)
         //Aktion wenn auf Okay geklickt wurde
-        builder.setPositiveButton("Ok") { _, _ ->
+        builder.setPositiveButton(R.string.ok) { _, _ ->
         }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()
@@ -123,49 +102,11 @@ class HelpFragment : Fragment() {
     private fun showInfoResult(){
         val builder = AlertDialog.Builder(requireContext())
         //Titel des Dialogs
-        builder.setTitle("Promille-Wert")
+        builder.setTitle(R.string.InfoTitlePromilleSkala)
         //Inhalt des Fensters
-        builder.setMessage(
-            "0,1‰ - 0,3‰: \n " +
-                    "- man ist kontaktfreudiger\n" +
-                    "- man macht erste Fehler" +
-                    "\n" +
-                    "\n" +
-                    "0,3‰ - 0,5‰: \n" +
-                    "- verlangsamte Reaktion und Aufmerksamkeit \n" +
-                    "- Risikobereitschaft steigt \n" +
-                    "- man kann weniger sehen und hören" +
-                    "- man schätzt Geschwindigkeite falsch ein"+
-                    "\n"+
-                    "\n" +
-                "0,5‰ - 0,8‰: \n" +
-                "- fehlende Konzentrationsfähigkeiten \n" +
-                    "- verkleindertes Sichtfeld \n" +
-                    "- deutlich schlechtere Reaktionszeit \n" +
-                    "- Gleichgewichtsstörrungen"+
-                    "\n"+
-                    "\n" +
-                    "1,0‰ - 2,0‰: \n" +
-                    "- schlechtere Sehfähigkeit\n" +
-                    "- kein Räumliches Sehen mehr \n" +
-                    "- Sprach- Reaktions- und Gleichgewichtsprobleme sind sehr stark ausgeprägt \n" +
-                    "- Orientierungslosigkeit"+
-                    "\n"+
-                    "\n" +
-                    "2,0‰ - 3,0‰: \n" +
-                    "- unkontrollierte bewegungen \n" +
-                    "- Erbrechen \n" +
-                    "- Filmriss ist vorprogrammiert \n" +
-                    "- LEBENSGEFAHR vorallen bei Jugendlichen"+
-                    "\n"+
-                    "\n" +
-                    "ab 3,0‰: \n" +
-                    "- LEBENSGEFAHR \n" +
-                    "- Bewusstlosigkeit \n" +
-                    "- Gefahren durch schwache Atmung"
-        )
+        builder.setMessage(R.string.InfoPromilleText)
         //Aktion wenn auf Okay geklickt wurde
-        builder.setPositiveButton("Ok") { _, _ ->
+        builder.setPositiveButton(R.string.ok) { _, _ ->
         }
         //Dialog erstellen
         val infoFormularDialog: AlertDialog = builder.create()

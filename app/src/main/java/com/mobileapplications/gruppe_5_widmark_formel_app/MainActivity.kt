@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         //und button wieder ausblenden
         view.visibility= View.GONE
         if(editDuartion.equals("")) {
-            Toast.makeText(this, "Bitte gebe erst einen Wert ein bevor du ihn bestätigst!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.textDoneErrorText, Toast.LENGTH_SHORT).show()
         }
         else {
             //Text anzeigen

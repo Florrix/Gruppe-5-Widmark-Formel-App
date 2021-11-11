@@ -92,7 +92,7 @@ class StartFragment : Fragment() {
                 //wenn noch nicht alles ausgefült ist, dann wird eine Meldung angezeigt
                 Toast.makeText(
                     activity,
-                    "Bitte überprüfe alle Eingaben",
+                    R.string.inputErrorText,
                     Toast.LENGTH_SHORT
                 ).show();
             } else {
