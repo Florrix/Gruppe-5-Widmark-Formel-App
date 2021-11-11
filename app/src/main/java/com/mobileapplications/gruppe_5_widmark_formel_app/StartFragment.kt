@@ -81,7 +81,7 @@ class StartFragment : Fragment() {
             val pureAlcoholPerDrink =
                 alcoholMapping.get(binding.spinnerAlcoholtype.selectedItem).toString()
                     .toDouble() * 0.79
-            //es soll geschaut werden, ob alle Inhalte eingegeben wurden
+            //es soll geschaut werden, ob alle Inhalte eingegeben wurden und realistisch sind
             if (weight.isNullOrEmpty()
                 || duration.isNullOrEmpty()
                 || quantity.isNullOrEmpty()
@@ -89,7 +89,8 @@ class StartFragment : Fragment() {
                 || quantity.isNullOrEmpty()
                 || pureAlcoholPerDrink == 0.0
                 || weight.toDouble() == 0.0
-                || weight.toDouble() < 35 ||weight.toDouble() > 200
+                || weight.toDouble() < 35
+                || weight.toDouble() > 200
             ) {
                 //wenn noch nicht alles ausgefült ist, dann wird eine Meldung angezeigt
                 Toast.makeText(
